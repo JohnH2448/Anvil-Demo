@@ -15,9 +15,8 @@ module Writeback (
     assign writeAddress = memoryWritebackPayload.destinationRegister;
     assign writeData = memoryWritebackPayload.data;
     assign destinationEnable =
-           memoryWritebackPayload.valid &&
-           memoryWritebackPayload.writebackEnable &&
-           !memoryWritebackPayload.illegal;
+        memoryWritebackPayload.valid &&
+        memoryWritebackPayload.writebackEnable &&
+        !memoryWritebackPayload.illegal;
 
 endmodule
-

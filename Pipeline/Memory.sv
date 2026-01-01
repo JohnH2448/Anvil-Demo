@@ -109,19 +109,19 @@ module Memory (
                         logic [15:0] h;
                         word = loadData;
                         unique case (executeMemoryPayload.memoryWidth)
-                            2'b00: begin // byte (LB/LBU)
+                            2'b00: begin 
                                 b = word >> {addressRegister[1:0], 3'b000};
                                 memoryWritebackPayload.data <= executeMemoryPayload.memorySigned
                                     ? {{24{b[7]}}, b}
                                     : {24'b0, b};
                             end
-                            2'b01: begin // half (LH/LHU)  (assumes misalign already trapped)
-                                h = word >> {addressRegister[1], 4'b0000}; // shift by 0 or 16
+                            2'b01: begin 
+                                h = word >> {addressRegister[1], 4'b0000}; 
                                 memoryWritebackPayload.data <= executeMemoryPayload.memorySigned
                                     ? {{16{h[15]}}, h}
                                     : {16'b0, h};
                             end
-                            2'b11: begin // word (LW) (assumes aligned)
+                            2'b11: begin 
                                 memoryWritebackPayload.data <= word;
                             end
                             default: ;

@@ -25,7 +25,7 @@ package pack;
     OPCODE_AUIPC = 7'b0010111, // U-type
     OPCODE_JAL = 7'b1101111, // J-type
     OPCODE_JALR = 7'b1100111, // I-type
-    OPCODE_SYSTEM = 7'b1110011  // I-type (CSR, ECALL, EBREAK) DO LATER
+    OPCODE_SYSTEM = 7'b1110011 // I-type (CSR, ECALL, EBREAK) DO LATER
   } opcode_;
 
   typedef enum logic [2:0] {

@@ -64,4 +64,3 @@ module Forward (
     end
 
 endmodule
-// MUST DO FOREWARDING FOR BRANCH CHECKS IN EXECUTE STAGE

@@ -3,15 +3,13 @@ import pack::*;
 module Imem #(
     parameter int DEPTH_WORDS = 1024
 ) (
-    input  logic        clock,   // not strictly needed for pure ROM, but included for symmetry
-    input  logic        reset,
-    input  logic [31:0] address, // PC from Fetch (byte address)
-    output logic [31:0] data,    // instruction word
-    output logic        valid    // 1 iff 'data' matches current 'address'
+    input logic clock,
+    input logic reset,
+    input logic [31:0] address,
+    output logic [31:0] data,
+    output logic valid
 );
-
-    // Word-addressed ROM (instruction memory)
-    localparam int ADDR_LSB = 2; // ignore byte offset bits [1:0]
+    localparam int ADDR_LSB = 2;
     localparam int ADDR_MSB = ADDR_LSB + $clog2(DEPTH_WORDS) - 1;
 
     logic [31:0] mem [0:DEPTH_WORDS-1];
@@ -24,7 +22,7 @@ module Imem #(
 
     always_comb begin
         if (reset) begin
-            data  = 32'h00000013; // e.g. ADDI x0, x0, 0 (NOP)
+            data  = 32'h00000013;
             valid = 1'b0;
         end else begin
             data  = mem[address[ADDR_MSB:ADDR_LSB]];
