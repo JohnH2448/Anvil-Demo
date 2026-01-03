@@ -1,7 +1,7 @@
 // import pack::*;
 package pack;
 
-  parameter logic [31:0] resetVector = 32'h00000000;
+  parameter logic [31:0] resetVector = 32'h80000000;
   parameter logic [31:0] trapVector = 32'h00000000;
 
   typedef enum logic [2:0] {

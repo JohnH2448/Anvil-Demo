@@ -83,6 +83,7 @@ class alignas(VL_CACHE_LINE_BYTES) VTop___024root final : public VerilatedModule
     };
     struct {
         IData/*31:0*/ Top__DOT__memory__DOT__unnamedblk1__DOT__word;
+        IData/*31:0*/ Top__DOT__imem_inst__DOT__unnamedblk1__DOT__off_bytes;
         IData/*31:0*/ Top__DOT__dmem_inst__DOT__unnamedblk2__DOT__idx;
         IData/*31:0*/ Top__DOT__dmem_inst__DOT__unnamedblk2__DOT__word;
         IData/*31:0*/ __VactIterCount;

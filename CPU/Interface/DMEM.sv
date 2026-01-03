@@ -1,5 +1,5 @@
 module Dmem #(
-    parameter int DEPTH_WORDS = 1024
+    parameter int DEPTH_WORDS = 16384
 ) (
     input logic clock,
     input logic reset,

@@ -1,6 +1,7 @@
 verilator -Wall -Wno-fatal --cc CPU/pack.sv CPU/Top.sv CPU/Control/*.sv CPU/Pipeline/*.sv CPU/Interface/*.sv \
-  --top-module Top --exe sim_main.cpp
-  
-make -C obj_dir -f VTop.mk -j$(nproc)
+  --top-module Top --exe sim_main.cpp \
+  --Mdir Verilator
 
-./obj_dir/VTop
+make -C Verilator -f VTop.mk -j$(nproc)
+
+./Verilator/VTop

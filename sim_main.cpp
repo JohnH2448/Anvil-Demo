@@ -1,4 +1,4 @@
-#include "obj_dir/VTop.h"
+#include "Verilator/VTop.h"
 #include "verilated.h"
 
 int main(int argc, char **argv) {

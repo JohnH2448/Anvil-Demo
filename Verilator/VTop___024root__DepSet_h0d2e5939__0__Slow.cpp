@@ -370,8 +370,6 @@ VL_ATTR_COLD void VTop___024root___stl_sequent__TOP__0(VTop___024root* vlSelf) {
                                                                            vlSelf->Top__DOT__registerFile__DOT__registers
                                                                            [0x1eU]))) 
                                                         >> 0x20U));
-    vlSelf->Top__DOT__instructionDataValid = (1U & 
-                                              (~ (IData)(vlSelf->reset)));
     vlSelf->dbg_pc = vlSelf->Top__DOT__fetch__DOT__programCounter;
     vlSelf->dbg_ID_EX_Valid = (1U & vlSelf->Top__DOT__decodeExecutePayload[0U]);
     vlSelf->Top__DOT__loadDataValid = (1U & (~ (IData)(vlSelf->reset)));
@@ -409,15 +407,19 @@ VL_ATTR_COLD void VTop___024root___stl_sequent__TOP__0(VTop___024root* vlSelf) {
     vlSelf->dbg_registers[0x1dU] = vlSelf->Top__DOT__debug_regs_flat[0x1dU];
     vlSelf->dbg_registers[0x1eU] = vlSelf->Top__DOT__debug_regs_flat[0x1eU];
     vlSelf->dbg_registers[0x1fU] = vlSelf->Top__DOT__debug_regs_flat[0x1fU];
-    vlSelf->dbg_IMEM_valid = vlSelf->Top__DOT__instructionDataValid;
-    vlSelf->Top__DOT__instructionData = ((IData)(vlSelf->reset)
-                                          ? 0x13U : 
-                                         vlSelf->Top__DOT__imem_inst__DOT__mem
-                                         [(0x3ffU & 
-                                           (vlSelf->dbg_pc 
-                                            >> 2U))]);
+    vlSelf->Top__DOT__instructionData = 0x13U;
+    vlSelf->Top__DOT__instructionDataValid = 0U;
     vlSelf->Top__DOT__controlReset = 0U;
     if ((1U & (~ (IData)(vlSelf->reset)))) {
+        vlSelf->Top__DOT__imem_inst__DOT__unnamedblk1__DOT__off_bytes 
+            = (vlSelf->dbg_pc - (IData)(0x80000000U));
+        if (((0U == (3U & vlSelf->dbg_pc)) & (0x1000U 
+                                              > vlSelf->Top__DOT__imem_inst__DOT__unnamedblk1__DOT__off_bytes))) {
+            vlSelf->Top__DOT__instructionData = vlSelf->Top__DOT__imem_inst__DOT__mem
+                [(0x3ffU & (vlSelf->Top__DOT__imem_inst__DOT__unnamedblk1__DOT__off_bytes 
+                            >> 2U))];
+            vlSelf->Top__DOT__instructionDataValid = 1U;
+        }
         if (((IData)(vlSelf->dbg_ID_EX_Valid) & (vlSelf->Top__DOT__decodeExecutePayload[0U] 
                                                  >> 1U))) {
             vlSelf->Top__DOT__controlReset = 1U;
@@ -532,6 +534,7 @@ VL_ATTR_COLD void VTop___024root___stl_sequent__TOP__0(VTop___024root* vlSelf) {
         }
     }
     vlSelf->dbg_IMEM_data = vlSelf->Top__DOT__instructionData;
+    vlSelf->dbg_IMEM_valid = vlSelf->Top__DOT__instructionDataValid;
     vlSelf->dbg_trap = vlSelf->Top__DOT__controlReset;
     vlSelf->dbg_wb_value = ((IData)(vlSelf->Top__DOT__destinationEnable)
                              ? ((vlSelf->Top__DOT__memoryWritebackPayload[1U] 
@@ -716,6 +719,7 @@ VL_ATTR_COLD void VTop___024root___ctor_var_reset(VTop___024root* vlSelf) {
     for (int __Vi0 = 0; __Vi0 < 1024; ++__Vi0) {
         vlSelf->Top__DOT__imem_inst__DOT__mem[__Vi0] = VL_RAND_RESET_I(32);
     }
+    vlSelf->Top__DOT__imem_inst__DOT__unnamedblk1__DOT__off_bytes = VL_RAND_RESET_I(32);
     for (int __Vi0 = 0; __Vi0 < 1024; ++__Vi0) {
         vlSelf->Top__DOT__dmem_inst__DOT__mem[__Vi0] = VL_RAND_RESET_I(32);
     }

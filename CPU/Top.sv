@@ -21,7 +21,7 @@ module Top (
     output logic dbg_IMEM_valid,
     output logic [31:0] dbg_pc,
     output logic [31:0] dbg_wb_value,
-
+    // declare under forwarding unit if you delete these
     output logic forwardEnable1,
     output logic forwardEnable2,
     output logic [31:0] forwardData1,
