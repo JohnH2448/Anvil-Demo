@@ -172,7 +172,7 @@ module Decode (
             OPCODE_SYSTEM: begin
                 readAddress1 = fetchDecodePayload.instruction[19:15];
                 decodeExecuteCandidate.destinationRegister = fetchDecodePayload.instruction[11:7];
-                decodeExecuteCandidate.writebackType = WB_ALU;
+                decodeExecuteCandidate.writebackType = WB_NONE;
                 if (fetchDecodePayload.instruction[14:12] != 3'b000) begin
                     unique case (fetchDecodePayload.instruction[31:20])
                         // Machine Information Registers (MRO)
@@ -249,7 +249,7 @@ module Decode (
                     if (decodeExecuteCandidate.decodeExecuteCSR.CSRWriteIntent && ro) begin
                         decodeExecuteCandidate.illegal = 1'b1;
                     end
-                end
+                end // Other system instructions to be added. no error here
             end // I-type   (CSR / ECALL / EBREAK)
             default: begin
                 decodeExecuteCandidate.illegal = 1'b1;
