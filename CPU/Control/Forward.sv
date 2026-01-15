@@ -18,7 +18,16 @@ module Forward (
     output logic [31:0] forwardData2,
     //csrs
     input CSROp_ executeMemoryCSROp,
-    input [31:0] oldCSRData
+    input logic [31:0] oldCSRData,
+
+    input destinationCSR_ executeMemoryDestinationCSR,
+    input logic executeMemoryCSRWriteIntent,
+    input logic [31:0] executeMemoryCSRData,
+    input destinationCSR_ memoryWritebackDestinationCSR,
+    input logic memoryWritebackCSRWriteIntent,
+    input destinationCSR_ decodeExecuteDestinationCSR,
+    output logic [31:0] csrForwardData,
+    output logic csrForwardEnable
 );
 
     always_comb begin
@@ -26,6 +35,8 @@ module Forward (
         forwardEnable2 = 1'b0;
         forwardData1 = 32'd0;
         forwardData2 = 32'd0;
+        csrForwardEnable = 2'd0;
+        csrForwardData = 32'd0;
         if (decodeExecuteRegister1 != 5'd0) begin
             if (executeMemoryValid &&
                 ((executeMemoryWritebackType != WB_NONE && executeMemoryWritebackType != WB_MEM) || executeMemoryCSROp != CSR_NONE) &&
@@ -70,6 +81,12 @@ module Forward (
                 forwardData2 = memoryWritebackData;
             end
         end
+        if ((decodeExecuteDestinationCSR == executeMemoryDestinationCSR) && executeMemoryCSRWriteIntent && executeMemoryValid) begin
+            csrForwardData = executeMemoryCSRData;
+            csrForwardEnable = 1'b1;
+        end else if ((decodeExecuteDestinationCSR == memoryWritebackDestinationCSR) && memoryWritebackCSRWriteIntent && memoryWritebackValid) begin
+            csrForwardData = memoryWritebackData;
+            csrForwardEnable = 1'b1;
+        end
     end
-
 endmodule

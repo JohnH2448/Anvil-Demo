@@ -18,6 +18,7 @@ module CSRFile (
         if (reset) begin
             csrs <= '0;
             csrs[4'b1000] <= 32'h40000100;
+            csrs[4'b0000] <= 32'h00001800;
         end else if (csrDestinationEnable) begin
             csrs[destinationCSR] <= csrWriteData;
         end
