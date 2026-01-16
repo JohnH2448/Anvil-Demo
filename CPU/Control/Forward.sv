@@ -19,7 +19,7 @@ module Forward (
     //csrs
     input CSROp_ executeMemoryCSROp,
     input logic [31:0] oldCSRData,
-    input logic memoryWritebackCSRData,
+    input logic [31:0] memoryWritebackCSRData,
     input destinationCSR_ executeMemoryDestinationCSR,
     input logic executeMemoryCSRWriteIntent,
     input logic [31:0] executeMemoryCSRData,
@@ -35,7 +35,7 @@ module Forward (
         forwardEnable2 = 1'b0;
         forwardData1 = 32'd0;
         forwardData2 = 32'd0;
-        csrForwardEnable = 2'd0;
+        csrForwardEnable = 1'd0;
         csrForwardData = 32'd0;
         if (decodeExecuteRegister1 != 5'd0) begin
             if (executeMemoryValid &&

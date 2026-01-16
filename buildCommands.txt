@@ -2,6 +2,9 @@ verilator -Wall -Wno-fatal --cc CPU/pack.sv CPU/Top.sv CPU/Control/*.sv CPU/Pipe
   --top-module Top --exe sim_main.cpp \
   --Mdir Verilator
 
-make -C Verilator -f VTop.mk -j$(nproc)
+export PATH=/usr/bin:/bin:$PATH
+hash -r
+make -C Verilator -f VTop.mk -j"$(nproc)"
+
 
 ./Verilator/VTop

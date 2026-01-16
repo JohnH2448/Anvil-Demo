@@ -152,4 +152,5 @@ module Memory (
 endmodule
 
 
+
 // Do store buffer and dependency checks on loads

@@ -104,11 +104,11 @@ module Top (
     destinationCSR_ destinationCSR;
     logic csrDestinationEnable;
     logic [31:0] csrWriteData;
+    logic dualValid;
 
     // Forwarding Unit
     logic [31:0] csrForwardData;
     logic csrForwardEnable;
-
 
 
     Forward forward (
@@ -220,7 +220,8 @@ module Top (
         .readData1(readData1),
         .readData2(readData2),
         .debug_regs_flat(debug_regs_flat),
-        .memoryWritebackValid(memoryWritebackValid)
+        .memoryWritebackValid(memoryWritebackValid),
+        .dualValid(dualValid)
     );
 
     Execute execute (
@@ -269,7 +270,9 @@ module Top (
         .writeData(writeData),
         .memoryWritebackValid(memoryWritebackValid),
         .destinationCSR(destinationCSR),
-        .csrDestinationEnable(csrDestinationEnable)
+        .csrDestinationEnable(csrDestinationEnable),
+        .csrWriteData(csrWriteData),
+        .dualValid(dualValid)
     );
 
     Imem #(.DEPTH_WORDS(1024)) imem_inst (

@@ -250,7 +250,7 @@ module Decode (
                         decodeExecuteCandidate.illegal = 1'b1;
                     end
                 end // Other system instructions to be added. no error here
-            end // I-type   (CSR / ECALL / EBREAK)
+            end // I-type   (CSR / ECALL / EBREAK / MRET / WFI (NOP))
             default: begin
                 decodeExecuteCandidate.illegal = 1'b1;
             end

@@ -22,17 +22,22 @@ VL_ATTR_COLD void VTop___024root___eval_triggers__stl(VTop___024root* vlSelf) {
                                      != (IData)(vlSelf->__Vtrigprevexpr___TOP__Top__DOT__readAddress1__0)));
     vlSelf->__VstlTriggered.set(3U, ((IData)(vlSelf->Top__DOT__readAddress2) 
                                      != (IData)(vlSelf->__Vtrigprevexpr___TOP__Top__DOT__readAddress2__0)));
+    vlSelf->__VstlTriggered.set(4U, ((IData)(vlSelf->Top__DOT__readCSR) 
+                                     != (IData)(vlSelf->__Vtrigprevexpr___TOP__Top__DOT__readCSR__0)));
     vlSelf->__Vtrigprevexpr___TOP__Top__DOT__memoryWritebackControl__0 
         = vlSelf->Top__DOT__memoryWritebackControl;
     vlSelf->__Vtrigprevexpr___TOP__Top__DOT__readAddress1__0 
         = vlSelf->Top__DOT__readAddress1;
     vlSelf->__Vtrigprevexpr___TOP__Top__DOT__readAddress2__0 
         = vlSelf->Top__DOT__readAddress2;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__readCSR__0 
+        = vlSelf->Top__DOT__readCSR;
     if (VL_UNLIKELY((1U & (~ (IData)(vlSelf->__VstlDidInit))))) {
         vlSelf->__VstlDidInit = 1U;
         vlSelf->__VstlTriggered.set(1U, 1U);
         vlSelf->__VstlTriggered.set(2U, 1U);
         vlSelf->__VstlTriggered.set(3U, 1U);
+        vlSelf->__VstlTriggered.set(4U, 1U);
     }
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {

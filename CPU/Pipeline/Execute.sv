@@ -31,7 +31,7 @@ module Execute (
 
     always_comb begin
         branchValid = '0;
-        destinationCSR = '0;
+        destinationCSR = MSTATUS;
         tempResult = 32'd0;
         operand1 = 32'd0;
         operand2 = 32'd0;
