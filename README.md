@@ -15,11 +15,11 @@
 | CSR       | ACCESS | NOTES                                 |
 |-----------|--------|---------------------------------------|
 | MSTATUS   | MRW    | Only MRW Bits 3 + 7. M-Mode Hardwired |
-| MEPC      | MRW    | Permenant [1:0] Word Align Mask       |
+| MEPC      | MRW    | Word Align Mask                       |
 | MCAUSE    | MRW    | Includes Misalignment Traps           |
 | MTVAL     | MRW    | Standard                              |
 | MIE       | MRW    | Only MRW Bits 3 + 7 + 11              |
-| MTVEC     | MRW    | Permenant [1:0] Word Align Mask       |
+| MTVEC     | MRW    | Word Align Mask + Direct Mode Only    |
 | MSCRATCH  | MRW    | Standard                              |
 | MISA      | MRO    | RV32I                                 |
 | MVENDORID | MRO    | Standard                              |
