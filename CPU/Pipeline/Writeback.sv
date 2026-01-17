@@ -17,7 +17,7 @@ module Writeback (
 );
 
     assign memoryWritebackValid = memoryWritebackPayload.valid;
-    assign dualValid = memoryWritebackPayload.valid && !memoryWritebackPayload.illegal
+    assign dualValid = memoryWritebackPayload.valid && !memoryWritebackPayload.illegal;
     // reg file
     assign writeAddress = memoryWritebackPayload.destinationRegister;
     assign writeData = (memoryWritebackPayload.CSROp != CSR_NONE) ? memoryWritebackPayload.oldCSRValue : memoryWritebackPayload.data;

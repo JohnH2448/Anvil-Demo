@@ -51,7 +51,7 @@ module Execute (
         if (decodeExecutePayload.isMRET && decodeExecutePayload.valid && !decodeExecutePayload.illegal) begin
             mretSignal = 1'd1;
             destinationCSR = MEPC;
-            branchData <= forwardCorrectedCSRReadData;
+            branchData = forwardCorrectedCSRReadData;
         end else if (decodeExecutePayload.decodeExecuteCSR.CSROp == CSR_NONE) begin
             unique case (decodeExecutePayload.aluSource)
                 default:;

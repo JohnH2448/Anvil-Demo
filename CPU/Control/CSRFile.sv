@@ -43,7 +43,7 @@ module CSRFile (
                 csrs[MINSTRET] <= csrs[MINSTRET] + 32'd1;
             end
             if (controlReset) begin
-                csrs[MTVAL] < 32'd0;
+                csrs[MTVAL] <= 32'd0;
                 csrs[MCAUSE] <= {28'd0, mcause};
                 unique case (mcause)
                     4'h6: csrs[MEPC] <= memoryWritebackPC;

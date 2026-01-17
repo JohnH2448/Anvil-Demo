@@ -73,6 +73,7 @@ module Top (
 
     // CSR File
     logic [31:0] csrReadData;
+    logic [31:0] trapVector;
 
     // Fetch Stage
     logic [31:0] instructionAddress;
@@ -82,8 +83,6 @@ module Top (
     decodeExecutePayload_ decodeExecutePayload;
     logic [4:0] readAddress1;
     logic [4:0] readAddress2;
-    logic ecall;
-    logic ebreak;
 
     // Execute Stage
     logic branchValid;
@@ -153,9 +152,11 @@ module Top (
         .csrWriteData(csrWriteData),
         .readCSR(readCSR),
         .destinationCSR(destinationCSR),
-        .csrDestinationEnable(csrDestinationEnable)
+        .csrDestinationEnable(csrDestinationEnable),
         .controlReset(controlReset),
         .mcause(mcause),
+        .trapVector(trapVector),
+        .dualValid(dualValid)
         .decodeExecutePC(decodeExecutePayload.programCounter),
         .executeMemoryPC(executeMemoryPayload.programCounter),
         .memoryWritebackPC(memoryWritebackPayload.programCounter)
@@ -188,7 +189,7 @@ module Top (
         .executeMemoryValid(executeMemoryPayload.valid),
         .executeMemoryWritebackType(executeMemoryPayload.writebackType),
         .loadDataValid(loadDataValid),
-        .executeMemoryIllegal(executeMemoryPayload.illegal)
+        .executeMemoryIllegal(executeMemoryPayload.illegal),
         .mcause(mcause),
         .ebreak(decodeExecutePayload.ebreak),
         .ecall(decodeExecutePayload.ecall),
@@ -210,7 +211,8 @@ module Top (
         .instructionAddress(instructionAddress),
         .fetchDecodePayload(fetchDecodePayload),
         .controlReset(controlReset),
-        .mretSignal(mretSignal)
+        .mretSignal(mretSignal),
+        .trapVector(trapVector)
     );
 
     Decode decode (
@@ -223,9 +225,7 @@ module Top (
         .readAddress1(readAddress1),
         .readAddress2(readAddress2),
         .readData1(readData1),
-        .readData2(readData2),
-        .ecall(ecall),
-        .ebreak(ebreak)
+        .readData2(readData2)
     );
 
     RegisterFile registerFile (
