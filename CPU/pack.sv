@@ -155,6 +155,8 @@ package pack;
     logic [31:0] programCounter;
     logic [4:0] destinationRegister;
     logic [31:0] data;
+    logic memoryReadEnable;
+    logic memoryWriteEnable;
     logic writebackEnable;
     logic illegal;
     logic valid;

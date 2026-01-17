@@ -26,7 +26,8 @@ module Hazard (
     input logic ebreak,
     input logic ecall,
     input logic memoryReadEnable,
-    input logic memoryWriteEnable
+    input logic memoryWriteEnable,
+    input logic mretSignal
 );
     // Trap Handler
     always_comb begin
@@ -57,6 +58,9 @@ module Hazard (
                 memoryWritebackControl.flush = 1'b1;
                 controlReset = 1'b1;
                 mcause = 4'h0;
+            end else if (mretSignal) begin
+                fetchDecodeControl.flush = 1'b1;
+                decodeExecuteControl.flush = 1'b1;
             end else if (decodeExecuteValid && decodeExecuteIllegal) begin
                 // Illegal Instruction from Decode Stage
                 fetchDecodeControl.flush = 1'b1;

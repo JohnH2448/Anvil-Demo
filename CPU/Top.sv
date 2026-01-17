@@ -156,7 +156,7 @@ module Top (
         .controlReset(controlReset),
         .mcause(mcause),
         .trapVector(trapVector),
-        .dualValid(dualValid)
+        .dualValid(dualValid),
         .decodeExecutePC(decodeExecutePayload.programCounter),
         .executeMemoryPC(executeMemoryPayload.programCounter),
         .memoryWritebackPC(memoryWritebackPayload.programCounter)
@@ -193,8 +193,9 @@ module Top (
         .mcause(mcause),
         .ebreak(decodeExecutePayload.ebreak),
         .ecall(decodeExecutePayload.ecall),
-        .memoryReadEnable(executeMemoryPayload.memoryReadEnable),
-        .memoryWriteEnable(executeMemoryPayload.memoryWriteEnable)
+        .memoryReadEnable(memoryWritebackPayload.memoryReadEnable),
+        .memoryWriteEnable(memoryWritebackPayload.memoryWriteEnable),
+        .mretSignal(mretSignal)
     );
 
     Fetch fetch (
