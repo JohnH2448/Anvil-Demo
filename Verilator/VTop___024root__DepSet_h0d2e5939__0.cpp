@@ -1476,6 +1476,9 @@ VL_INLINE_OPT void VTop___024root___act_comb__TOP__1(VTop___024root* vlSelf) {
                                                    >> 1U)))) {
                             vlSelf->Top__DOT__decode__DOT__decodeExecuteCandidate[0U] 
                                 = (4U | vlSelf->Top__DOT__decode__DOT__decodeExecuteCandidate[0U]);
+                            vlSelf->Top__DOT__decode__DOT__decodeExecuteCandidate[0U] 
+                                = (0x1000U | (0xffff0fffU 
+                                              & vlSelf->Top__DOT__decode__DOT__decodeExecuteCandidate[0U]));
                         } else if ((0x10500073U != 
                                     ((vlSelf->Top__DOT__fetchDecodePayload[3U] 
                                       << 0x1fU) | (

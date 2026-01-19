@@ -114,3 +114,6 @@ module Hazard (
 endmodule
 
 // Trap Handler will redirect to 0 by default unless set
+
+// mtvec needs nops. hardware always reads from the commited register
+// eventually change this and also mstatus

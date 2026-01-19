@@ -259,7 +259,10 @@ module Decode (
                     unique case (fetchDecodePayload.instruction)
                         32'h00000073: decodeExecuteCandidate.ecall = 1;
                         32'h00100073: decodeExecuteCandidate.ebreak = 1;
-                        32'h30200073: decodeExecuteCandidate.isMRET = 1;
+                        32'h30200073: begin
+                            decodeExecuteCandidate.isMRET = 1;
+                            decodeExecuteCandidate.decodeExecuteCSR.destinationCSR = MEPC;
+                        end
                         32'h10500073: ; // NOP
                         default: decodeExecuteCandidate.illegal = 1;
                     endcase

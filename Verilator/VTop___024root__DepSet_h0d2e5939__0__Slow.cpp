@@ -81,7 +81,7 @@ VL_ATTR_COLD void VTop___024root___eval_initial__TOP(VTop___024root* vlSelf) {
         Top__DOT__dmem_inst__DOT__unnamedblk1__DOT__i 
             = ((IData)(1U) + Top__DOT__dmem_inst__DOT__unnamedblk1__DOT__i);
     }
-    VL_WRITEF("IMEM: loading imem.hex\n");
+    VL_WRITEF("DMEM: loading dmem.hex\n");
     VL_READMEM_N(true, 32, 16384, 0, std::string{"dmem.hex"}
                  ,  &(vlSelf->Top__DOT__dmem_inst__DOT__mem)
                  , 0, ~0ULL);
