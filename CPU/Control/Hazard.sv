@@ -28,8 +28,8 @@ module Hazard (
     input logic memoryReadEnable,
     input logic memoryWriteEnable,
     input logic mretSignal,
-    input logic readAddress1,
-    input logic readAddress2,
+    input logic [4:0] readAddress1,
+    input logic [4:0] readAddress2,
     input logic decodeCombIllegal,
     input logic fetchDecodeValid,
     input writebackType_ decodeExecuteWBType,
@@ -99,7 +99,7 @@ module Hazard (
                 executeMemoryControl.stall = 1'b1;
                 memoryWritebackControl.stall = 1'b1;
             end else begin
-                // Load-Use Hazard 2
+                // Load-Use Hazard
                 if ((decodeExecuteDestinationRegister != 5'd0) && (readAddress1 != 5'd0) && decodeExecuteValid && fetchDecodeValid && !decodeCombIllegal && (decodeExecuteDestinationRegister == readAddress1) && (decodeExecuteWBType == WB_MEM)) begin
                     fetchDecodeControl.stall = 1'b1;
                     decodeExecuteControl.flush = 1'b1;

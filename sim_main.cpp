@@ -19,7 +19,8 @@ int main(int argc, char **argv) {
     printf("SIM: starting execution\n");
 
     // run
-    for (int i = 1; i < 20; i++) {
+    int count = 0;
+    for (int i = 1; i < 5000; i++) {
         top.clock = 0; top.eval();
         top.clock = 1; top.eval();
         printf("\n\n");
@@ -35,7 +36,10 @@ int main(int argc, char **argv) {
         printf("EX/MEM PC=%08x v=%d\n",
             top.dbg_EX_MEM_programCounter,
             top.dbg_EX_MEM_Valid);
-
+        if (top.dbg_trap || count != 0) {
+            count++;
+            if (count > 5) {break;}
+        }
         printf("MEM/WB PC=%08x v=%d\n",
             top.dbg_MEM_WB_programCounter,
             top.dbg_MEM_WB_Valid);

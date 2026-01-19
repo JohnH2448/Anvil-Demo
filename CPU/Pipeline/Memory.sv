@@ -126,6 +126,7 @@ module Memory (
                             end
                             default: ;
                         endcase
+                        $display("\n\nLoaded %08h at address %08h", word, addressRegister, "\n\n");
                     end
                     memoryWritebackPayload.writebackEnable <= executeMemoryPayload.memoryReadEnable && loadDataValid;
                 end
