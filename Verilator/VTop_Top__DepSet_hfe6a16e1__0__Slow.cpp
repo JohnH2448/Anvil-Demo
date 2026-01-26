@@ -256,11 +256,6 @@ VL_ATTR_COLD void VTop_Top___stl_sequent__TOP__Top__0(VTop_Top* vlSelf) {
             vlSelf->__PVT__controlReset = 1U;
         }
     }
-    vlSelf->__PVT__mretSignal = 0U;
-    if ((vlSelf->__PVT__decodeExecutePayload[0U] & 
-         (0x20U == (0x3eU & vlSelf->__PVT__decodeExecutePayload[1U])))) {
-        vlSelf->__PVT__mretSignal = 1U;
-    }
     vlSelf->__PVT__csrForwardData = 0U;
     vlSelf->__PVT__csrForwardEnable = 0U;
     if (((((0xfU & (vlSelf->__PVT__decodeExecutePayload[1U] 
@@ -440,15 +435,7 @@ VL_ATTR_COLD void VTop_Top___eval_postponed__TOP__Top(VTop_Top* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+      VTop_Top___eval_postponed__TOP__Top\n"); );
     // Body
     if (VL_UNLIKELY(vlSelf->csrFile__DOT____Vstrobe0)) {
-        VL_WRITEF("\n\nException: MEPC=%08x (actual=%08x) MCAUSE=%08x MTVEC=%08x MTVAL=%08x\n\n\n",
-                  32,vlSelf->__PVT__csrFile__DOT__csrs
-                  [1U],32,((vlSelf->__PVT__memoryWritebackPayload[4U] 
-                            << 0xeU) | (vlSelf->__PVT__memoryWritebackPayload[3U] 
-                                        >> 0x12U)),
-                  32,vlSelf->__PVT__csrFile__DOT__csrs
-                  [2U],32,vlSelf->__PVT__csrFile__DOT__csrs
-                  [6U],32,vlSelf->__PVT__csrFile__DOT__csrs
-                  [3U]);
+        VL_WRITEF("Exception Detected\n");
         vlSelf->csrFile__DOT____Vstrobe0 = 0U;
     }
     if (VL_UNLIKELY(vlSelf->memory__DOT____Vstrobe0)) {

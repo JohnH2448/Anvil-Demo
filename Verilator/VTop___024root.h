@@ -7,6 +7,7 @@
 
 #include "verilated.h"
 class VTop_Top;
+class VTop___024unit;
 
 
 class VTop__Syms;
@@ -15,6 +16,7 @@ class alignas(VL_CACHE_LINE_BYTES) VTop___024root final : public VerilatedModule
   public:
     // CELLS
     VTop_Top* Top;
+    VTop___024unit* __PVT____024unit;
 
     // DESIGN SPECIFIC STATE
     VL_IN8(clock,0,0);

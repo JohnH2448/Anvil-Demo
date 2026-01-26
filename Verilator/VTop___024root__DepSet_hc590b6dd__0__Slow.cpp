@@ -6,16 +6,6 @@
 #include "VTop__Syms.h"
 #include "VTop___024root.h"
 
-VL_ATTR_COLD void VTop_Top___eval_static__TOP__Top(VTop_Top* vlSelf);
-
-VL_ATTR_COLD void VTop___024root___eval_static(VTop___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    VTop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    VTop___024root___eval_static\n"); );
-    // Body
-    VTop_Top___eval_static__TOP__Top((&vlSymsp->TOP__Top));
-}
-
 VL_ATTR_COLD void VTop_Top___eval_initial__TOP__Top(VTop_Top* vlSelf);
 VL_ATTR_COLD void VTop_MemExample___eval_initial__TOP__Top__mem_inst(VTop_MemExample* vlSelf);
 

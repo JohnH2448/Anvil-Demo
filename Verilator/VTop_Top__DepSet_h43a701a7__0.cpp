@@ -75,9 +75,11 @@ VL_INLINE_OPT void VTop_Top___act_comb__TOP__Top__0(VTop_Top* vlSelf) {
     __PVT__execute__DOT__csrOperand = 0;
     IData/*31:0*/ __PVT__execute__DOT__tempResult;
     __PVT__execute__DOT__tempResult = 0;
+    CData/*0:0*/ __PVT__execute__DOT__branchValid;
+    __PVT__execute__DOT__branchValid = 0;
     // Body
     vlSelf->__PVT__execute__DOT__illegal = 0U;
-    vlSelf->__PVT__execute__DOT__branchValid = 0U;
+    __PVT__execute__DOT__branchValid = 0U;
     vlSelf->__PVT__readCSR = 0U;
     __PVT__execute__DOT__tempResult = 0U;
     __PVT__execute__DOT__operand1 = 0U;
@@ -104,8 +106,10 @@ VL_INLINE_OPT void VTop_Top___act_comb__TOP__Top__0(VTop_Top* vlSelf) {
                                         : (0x1fU & 
                                            (vlSelf->__PVT__decodeExecutePayload[1U] 
                                             >> 7U)));
-    if ((vlSelf->__PVT__decodeExecutePayload[0U] & 
-         (0x20U == (0x3eU & vlSelf->__PVT__decodeExecutePayload[1U])))) {
+    if (((vlSelf->__PVT__decodeExecutePayload[0U] & 
+          (0x20U == (0x3eU & vlSelf->__PVT__decodeExecutePayload[1U]))) 
+         & (~ ((IData)(vlSelf->__PVT__executeMemoryControl) 
+               >> 1U)))) {
         vlSelf->__PVT__readCSR = 1U;
         vlSelf->__PVT__branchData = vlSelf->__PVT__execute__DOT__forwardCorrectedCSRReadData;
     } else if ((0U == (3U & (vlSelf->__PVT__decodeExecutePayload[1U] 
@@ -224,40 +228,40 @@ VL_INLINE_OPT void VTop_Top___act_comb__TOP__Top__0(VTop_Top* vlSelf) {
                 if ((0x20000000U & vlSelf->__PVT__decodeExecutePayload[1U])) {
                     if ((1U & (~ (vlSelf->__PVT__decodeExecutePayload[1U] 
                                   >> 0x1cU)))) {
-                        vlSelf->__PVT__execute__DOT__branchValid 
+                        __PVT__execute__DOT__branchValid 
                             = (__PVT__execute__DOT__brOp1 
                                >= __PVT__execute__DOT__brOp2);
                     }
                 } else {
-                    vlSelf->__PVT__execute__DOT__branchValid 
+                    __PVT__execute__DOT__branchValid 
                         = ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])
                             ? (__PVT__execute__DOT__brOp1 
                                < __PVT__execute__DOT__brOp2)
                             : VL_GTES_III(32, __PVT__execute__DOT__brOp1, __PVT__execute__DOT__brOp2));
                 }
             } else if ((0x20000000U & vlSelf->__PVT__decodeExecutePayload[1U])) {
-                vlSelf->__PVT__execute__DOT__branchValid 
-                    = ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])
-                        ? VL_LTS_III(32, __PVT__execute__DOT__brOp1, __PVT__execute__DOT__brOp2)
-                        : (__PVT__execute__DOT__brOp1 
-                           != __PVT__execute__DOT__brOp2));
+                __PVT__execute__DOT__branchValid = 
+                    ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])
+                      ? VL_LTS_III(32, __PVT__execute__DOT__brOp1, __PVT__execute__DOT__brOp2)
+                      : (__PVT__execute__DOT__brOp1 
+                         != __PVT__execute__DOT__brOp2));
             } else if ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])) {
-                vlSelf->__PVT__execute__DOT__branchValid 
-                    = (__PVT__execute__DOT__brOp1 == __PVT__execute__DOT__brOp2);
+                __PVT__execute__DOT__branchValid = 
+                    (__PVT__execute__DOT__brOp1 == __PVT__execute__DOT__brOp2);
             }
             if ((1U == (3U & (vlSelf->__PVT__decodeExecutePayload[1U] 
                               >> 0x16U)))) {
-                vlSelf->__PVT__execute__DOT__branchValid = 1U;
+                __PVT__execute__DOT__branchValid = 1U;
             } else if ((2U == (3U & (vlSelf->__PVT__decodeExecutePayload[1U] 
                                      >> 0x16U)))) {
-                vlSelf->__PVT__execute__DOT__branchValid = 1U;
+                __PVT__execute__DOT__branchValid = 1U;
             }
         } else {
-            vlSelf->__PVT__execute__DOT__branchValid = 0U;
+            __PVT__execute__DOT__branchValid = 0U;
         }
         if ((((vlSelf->__PVT__decodeExecutePayload[0U] 
                & (0U == (0x1eU & vlSelf->__PVT__decodeExecutePayload[1U]))) 
-              & (IData)(vlSelf->__PVT__execute__DOT__branchValid)) 
+              & (IData)(__PVT__execute__DOT__branchValid)) 
              & (0U != (0x70c00000U & vlSelf->__PVT__decodeExecutePayload[1U])))) {
             vlSelf->__PVT__branchData = ((2U == (3U 
                                                  & (vlSelf->__PVT__decodeExecutePayload[1U] 
@@ -268,9 +272,6 @@ VL_INLINE_OPT void VTop_Top___act_comb__TOP__Top__0(VTop_Top* vlSelf) {
             if ((0U != (3U & vlSelf->__PVT__branchData))) {
                 vlSelf->__PVT__execute__DOT__illegal = 1U;
             }
-        }
-        if (vlSelf->__PVT__execute__DOT__redirectAsserted) {
-            vlSelf->__PVT__execute__DOT__branchValid = 0U;
         }
     } else {
         vlSelf->__PVT__readCSR = (0xfU & (vlSelf->__PVT__decodeExecutePayload[1U] 
@@ -343,10 +344,15 @@ VL_INLINE_OPT void VTop_Top___act_comb__TOP__Top__0(VTop_Top* vlSelf) {
                                                    | vlSelf->__PVT__execute__DOT__result);
         }
     }
-    vlSelf->__PVT__branchValid = ((IData)(vlSelf->__PVT__execute__DOT__branchValid) 
+    vlSelf->__PVT__branchValid = ((IData)(__PVT__execute__DOT__branchValid) 
                                   & ((~ (IData)(vlSelf->__PVT__execute__DOT__illegal)) 
-                                     & (0U == (0x1eU 
-                                               & vlSelf->__PVT__decodeExecutePayload[1U]))));
+                                     & (IData)(((~ 
+                                                 ((IData)(vlSelf->__PVT__executeMemoryControl) 
+                                                  >> 1U)) 
+                                                & (0U 
+                                                   == 
+                                                   (0x1eU 
+                                                    & vlSelf->__PVT__decodeExecutePayload[1U]))))));
 }
 
 extern const VlWide<8>/*255:0*/ VTop__ConstPool__CONST_h5b9d2cef_0;

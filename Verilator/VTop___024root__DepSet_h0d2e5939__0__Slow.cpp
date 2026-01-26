@@ -5,6 +5,12 @@
 #include "VTop__pch.h"
 #include "VTop___024root.h"
 
+VL_ATTR_COLD void VTop___024root___eval_static(VTop___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    VTop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VTop___024root___eval_static\n"); );
+}
+
 VL_ATTR_COLD void VTop___024root___eval_final(VTop___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     VTop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;

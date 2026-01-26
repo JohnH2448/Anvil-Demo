@@ -32,6 +32,7 @@ VTop::VTop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , forwardData1{vlSymsp->TOP.forwardData1}
     , forwardData2{vlSymsp->TOP.forwardData2}
     , Top{vlSymsp->TOP.Top}
+    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

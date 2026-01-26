@@ -33,6 +33,7 @@ class alignas(VL_CACHE_LINE_BYTES)VTop__Syms final : public VerilatedSyms {
     VTop___024root                 TOP;
     VTop_Top                       TOP__Top;
     VTop_MemExample                TOP__Top__mem_inst;
+    VTop___024unit                 TOP____024unit;
 
     // SCOPE NAMES
     VerilatedScope __Vscope_Top__csrFile;

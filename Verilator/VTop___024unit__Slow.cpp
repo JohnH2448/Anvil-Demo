@@ -5,6 +5,7 @@
 #include "VTop__pch.h"
 #include "VTop__Syms.h"
 #include "VTop___024unit.h"
+VlUnpacked<std::string, 16> VTop___024unit::__Venumtab_enum_name0;
 
 void VTop___024unit___ctor_var_reset(VTop___024unit* vlSelf);
 

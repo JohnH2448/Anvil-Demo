@@ -49,9 +49,7 @@ class alignas(VL_CACHE_LINE_BYTES) VTop_Top final : public VerilatedModule {
         CData/*0:0*/ __PVT__dualValid;
         CData/*0:0*/ __PVT__csrForwardEnable;
         CData/*0:0*/ csrFile__DOT____Vstrobe0;
-        CData/*0:0*/ __PVT__execute__DOT__redirectAsserted;
         CData/*0:0*/ __PVT__execute__DOT__illegal;
-        CData/*0:0*/ __PVT__execute__DOT__branchValid;
         CData/*0:0*/ __PVT__memory__DOT__illegal;
         CData/*0:0*/ __PVT__memory__DOT__accessFault;
         CData/*0:0*/ __PVT__memory__DOT__storeReq;
@@ -83,10 +81,10 @@ class alignas(VL_CACHE_LINE_BYTES) VTop_Top final : public VerilatedModule {
         IData/*31:0*/ __PVT__fetch__DOT__programCounter;
         IData/*31:0*/ __PVT__execute__DOT__result;
         IData/*31:0*/ __PVT__execute__DOT__forwardCorrectedCSRReadData;
-    };
-    struct {
         IData/*31:0*/ __PVT__memory__DOT__unnamedblk1__DOT__word;
         IData/*31:0*/ __Vdly__fetch__DOT__programCounter;
+    };
+    struct {
         VlWide<4>/*100:0*/ __PVT__fetchDecodePayload;
         VlWide<8>/*244:0*/ __PVT__decodeExecutePayload;
         VlWide<7>/*216:0*/ __PVT__executeMemoryPayload;

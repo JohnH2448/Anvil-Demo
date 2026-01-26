@@ -265,7 +265,7 @@ function filter_table(elem) {
 
 </script>
     <h1></h1>
-    <p>Report generated on 2026-01-25 21:36 GMT by <a href="https://pypi.python.org/pypi/riscof">riscof</a> v</p>
+    <p>Report generated on 2026-01-26 23:01 GMT by <a href="https://pypi.python.org/pypi/riscof">riscof</a> v</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -4541,7 +4541,7 @@ zicbo_cache_block_sz:
     <p>Please visit <a href="https://riscv-config.readthedocs.io/en/latest/yaml-specs.html">YAML specifications</a> for more information. </p>
 
     <h2>Summary</h2>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">61Passed</span>, <input checked="true" class="filter" data-test-result="failed" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">15Failed</span>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">69Passed</span>, <input checked="true" class="filter" data-test-result="failed" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">7Failed</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -4617,82 +4617,2085 @@ TEST_CASE_1=True
 XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "passed  results-table-row" >
+        <tbody class= "failed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/beq-01.S</td>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/beq-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log">commit_id:b91f98f3a0e908bad4680c2e3901fbc24b63a563
 MACROS:
 TEST_CASE_1=True
-XLEN=32</br></div></td>
+XLEN=32
+File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/beq-01.S/dut/DUT-venomcpu.signature
+File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/beq-01.S/ref/Reference-sail_c_simulator.signature
+Match  Line#    File1    File2
+*        320 deadbeef 00000002
+*        321 deadbeef 00000002
+*        322 deadbeef 00000002
+*        323 deadbeef 00000002
+*        324 deadbeef 00000002
+*        325 deadbeef 00000002
+*        326 deadbeef 00000002
+*        327 deadbeef 00000002
+*        328 deadbeef 00000002
+*        329 deadbeef 00000002
+*        330 deadbeef 00000002
+*        331 deadbeef 00000002
+*        332 deadbeef 00000002
+*        333 deadbeef 00000002
+*        334 deadbeef 00000002
+*        335 deadbeef 00000002
+*        336 deadbeef 00000002
+*        337 deadbeef 00000002
+*        338 deadbeef 00000002
+*        339 deadbeef 00000002
+*        340 deadbeef 00000002
+*        341 deadbeef 00000002
+*        342 deadbeef 00000002
+*        343 deadbeef 00000002
+*        344 deadbeef 00000002
+*        345 deadbeef 00000002
+*        346 deadbeef 00000003
+*        347 deadbeef 00000002
+*        348 deadbeef 00000002
+*        349 deadbeef 00000002
+*        350 deadbeef 00000002
+*        351 deadbeef 00000002
+*        352 deadbeef 00000002
+*        353 deadbeef 00000002
+*        354 deadbeef 00000002
+*        355 deadbeef 00000002
+*        356 deadbeef 00000002
+*        357 deadbeef 00000002
+*        358 deadbeef 00000002
+*        359 deadbeef 00000002
+*        360 deadbeef 00000002
+*        361 deadbeef 00000002
+*        362 deadbeef 00000002
+*        363 deadbeef 00000002
+*        364 deadbeef 00000002
+*        365 deadbeef 00000002
+*        366 deadbeef 00000002
+*        367 deadbeef 00000002
+*        368 deadbeef 00000002
+*        369 deadbeef 00000003
+*        370 deadbeef 00000002
+*        371 deadbeef 00000002
+*        372 deadbeef 00000002
+*        373 deadbeef 00000002
+*        374 deadbeef 00000002
+*        375 deadbeef 00000002
+*        376 deadbeef 00000002
+*        377 deadbeef 00000002
+*        378 deadbeef 00000002
+*        379 deadbeef 00000002
+*        380 deadbeef 00000002
+*        381 deadbeef 00000002
+*        382 deadbeef 00000002
+*        383 deadbeef 00000002
+*        384 deadbeef 00000002
+*        385 deadbeef 00000002
+*        386 deadbeef 00000002
+*        387 deadbeef 00000002
+*        388 deadbeef 00000002
+*        389 deadbeef 00000002
+*        390 deadbeef 00000002
+*        391 deadbeef 00000002
+*        392 deadbeef 00000001
+*        393 deadbeef 00000002
+*        394 deadbeef 00000002
+*        395 deadbeef 00000002
+*        396 deadbeef 00000002
+*        397 deadbeef 00000002
+*        398 deadbeef 00000002
+*        399 deadbeef 00000002
+*        400 deadbeef 00000002
+*        401 deadbeef 00000002
+*        402 deadbeef 00000002
+*        403 deadbeef 00000002
+*        404 deadbeef 00000002
+*        405 deadbeef 00000002
+*        406 deadbeef 00000002
+*        407 deadbeef 00000002
+*        408 deadbeef 00000002
+*        409 deadbeef 00000002
+*        410 deadbeef 00000002
+*        411 deadbeef 00000002
+*        412 deadbeef 00000002
+*        413 deadbeef 00000002
+*        414 deadbeef 00000002
+*        415 deadbeef 00000001
+*        416 deadbeef 00000002
+*        417 deadbeef 00000002
+*        418 deadbeef 00000002
+*        419 deadbeef 00000002
+*        420 deadbeef 00000002
+*        421 deadbeef 00000002
+*        422 deadbeef 00000002
+*        423 deadbeef 00000002
+*        424 deadbeef 00000002
+*        425 deadbeef 00000002
+*        426 deadbeef 00000002
+*        427 deadbeef 00000002
+*        428 deadbeef 00000002
+*        429 deadbeef 00000002
+*        430 deadbeef 00000002
+*        431 deadbeef 00000002
+*        432 deadbeef 00000002
+*        433 deadbeef 00000002
+*        434 deadbeef 00000002
+*        435 deadbeef 00000002
+*        436 deadbeef 00000002
+*        437 deadbeef 00000002
+*        438 deadbeef 00000003
+*        439 deadbeef 00000002
+*        440 deadbeef 00000002
+*        441 deadbeef 00000003
+*        442 deadbeef 00000002
+*        443 deadbeef 00000002
+*        444 deadbeef 00000002
+*        445 deadbeef 00000002
+*        446 deadbeef 00000002
+*        447 deadbeef 00000002
+*        448 deadbeef 00000002
+*        449 deadbeef 00000002
+*        450 deadbeef 00000002
+*        451 deadbeef 00000002
+*        452 deadbeef 00000002
+*        453 deadbeef 00000002
+*        454 deadbeef 00000002
+*        455 deadbeef 00000002
+*        456 deadbeef 00000002
+*        457 deadbeef 00000002
+*        458 deadbeef 00000002
+*        459 deadbeef 00000002
+*        460 deadbeef 00000002
+*        461 deadbeef 00000002
+*        462 deadbeef 00000002
+*        463 deadbeef 00000002
+*        464 deadbeef 00000001
+*        465 deadbeef 00000002
+*        466 deadbeef 00000002
+*        467 deadbeef 00000002
+*        468 deadbeef 00000002
+*        469 deadbeef 00000002
+*        470 deadbeef 00000002
+*        471 deadbeef 00000002
+*        472 deadbeef 00000002
+*        473 deadbeef 00000002
+*        474 deadbeef 00000002
+*        475 deadbeef 00000002
+*        476 deadbeef 00000002
+*        477 deadbeef 00000002
+*        478 deadbeef 00000002
+*        479 deadbeef 00000002
+*        480 deadbeef 00000002
+*        481 deadbeef 00000002
+*        482 deadbeef 00000002
+*        483 deadbeef 00000002
+*        484 deadbeef 00000002
+*        485 deadbeef 00000002
+*        486 deadbeef 00000002
+*        487 deadbeef 00000003
+*        488 deadbeef 00000002
+*        489 deadbeef 00000002
+*        490 deadbeef 00000002
+*        491 deadbeef 00000002
+*        492 deadbeef 00000002
+*        493 deadbeef 00000002
+*        494 deadbeef 00000002
+*        495 deadbeef 00000002
+*        496 deadbeef 00000002
+*        497 deadbeef 00000002
+*        498 deadbeef 00000002
+*        499 deadbeef 00000002
+*        500 deadbeef 00000002
+*        501 deadbeef 00000002
+*        502 deadbeef 00000002
+*        503 deadbeef 00000002
+*        504 deadbeef 00000002
+*        505 deadbeef 00000002
+*        506 deadbeef 00000002
+*        507 deadbeef 00000002
+*        508 deadbeef 00000002
+*        509 deadbeef 00000002
+*        510 deadbeef 00000001
+*        511 deadbeef 00000002
+*        512 deadbeef 00000002
+*        513 deadbeef 00000002
+*        514 deadbeef 00000002
+*        515 deadbeef 00000002
+*        516 deadbeef 00000002
+*        517 deadbeef 00000002
+*        518 deadbeef 00000002
+*        519 deadbeef 00000002
+*        520 deadbeef 00000002
+*        521 deadbeef 00000002
+*        522 deadbeef 00000002
+*        523 deadbeef 00000002
+*        524 deadbeef 00000002
+*        525 deadbeef 00000002
+*        526 deadbeef 00000002
+*        527 deadbeef 00000002
+*        528 deadbeef 00000002
+*        529 deadbeef 00000002
+*        530 deadbeef 00000002
+*        531 deadbeef 00000002
+*        532 deadbeef 00000002
+*        533 deadbeef 00000001
+*        534 deadbeef 00000002
+*        535 deadbeef 00000002
+*        536 deadbeef 00000002
+*        537 deadbeef 00000002
+*        538 deadbeef 00000002
+*        539 deadbeef 00000002
+*        540 deadbeef 00000002
+*        541 deadbeef 00000002
+*        542 deadbeef 00000002
+*        543 deadbeef 00000002
+*        544 deadbeef 00000002
+*        545 deadbeef 00000002
+*        546 deadbeef 00000002
+*        547 deadbeef 00000002
+*        548 deadbeef 00000002
+*        549 deadbeef 00000002
+*        550 deadbeef 00000002
+*        551 deadbeef 00000002
+*        552 deadbeef 00000002
+*        553 deadbeef 00000002
+*        554 deadbeef 00000002
+*        555 deadbeef 00000002
+*        556 deadbeef 00000001
+*        557 deadbeef 00000002
+*        558 deadbeef 00000002
+*        559 deadbeef 00000002
+*        560 deadbeef 00000002
+*        561 deadbeef 00000002
+*        562 deadbeef 00000002
+*        563 deadbeef 00000002
+*        564 deadbeef 00000002
+*        565 deadbeef 00000002
+*        566 deadbeef 00000002
+*        567 deadbeef 00000002
+*        568 deadbeef 00000002
+*        569 deadbeef 00000002
+*        570 deadbeef 00000002
+*        571 deadbeef 00000002
+*        572 deadbeef 00000002
+*        573 deadbeef 00000002
+*        574 deadbeef 00000002
+*        575 deadbeef 00000002
+*        576 deadbeef 00000002
+*        577 deadbeef 00000002
+*        578 deadbeef 00000002
+*        579 deadbeef 00000003
+*        580 deadbeef 00000002
+*        581 deadbeef 00000002
+*        582 deadbeef 00000002
+*        583 deadbeef 00000002
+         584 6f5ca309 6f5ca309
+</br></div></td>
         </tr></tbody>
         
-        <tbody class= "passed  results-table-row" >
+        <tbody class= "failed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bge-01.S</td>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bge-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log">commit_id:b91f98f3a0e908bad4680c2e3901fbc24b63a563
 MACROS:
 TEST_CASE_1=True
-XLEN=32</br></div></td>
+XLEN=32
+File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bge-01.S/dut/DUT-venomcpu.signature
+File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bge-01.S/ref/Reference-sail_c_simulator.signature
+Match  Line#    File1    File2
+*        304 deadbeef 00000001
+*        305 deadbeef 00000002
+*        306 deadbeef 00000001
+*        307 deadbeef 00000003
+*        308 deadbeef 00000003
+*        309 deadbeef 00000002
+*        310 deadbeef 00000003
+*        311 deadbeef 00000003
+*        312 deadbeef 00000001
+*        313 deadbeef 00000001
+*        314 deadbeef 00000001
+*        315 deadbeef 00000001
+*        316 deadbeef 00000001
+*        317 deadbeef 00000002
+*        318 deadbeef 00000003
+*        319 deadbeef 00000002
+*        320 deadbeef 00000003
+*        321 deadbeef 00000001
+*        322 deadbeef 00000003
+*        323 deadbeef 00000002
+*        324 deadbeef 00000001
+*        325 deadbeef 00000001
+*        326 deadbeef 00000002
+*        327 deadbeef 00000002
+*        328 deadbeef 00000001
+*        329 deadbeef 00000002
+*        330 deadbeef 00000002
+*        331 deadbeef 00000002
+*        332 deadbeef 00000003
+*        333 deadbeef 00000002
+*        334 deadbeef 00000002
+*        335 deadbeef 00000002
+*        336 deadbeef 00000002
+*        337 deadbeef 00000002
+*        338 deadbeef 00000003
+*        339 deadbeef 00000002
+*        340 deadbeef 00000001
+*        341 deadbeef 00000003
+*        342 deadbeef 00000002
+*        343 deadbeef 00000002
+*        344 deadbeef 00000003
+*        345 deadbeef 00000002
+*        346 deadbeef 00000003
+*        347 deadbeef 00000002
+*        348 deadbeef 00000001
+*        349 deadbeef 00000003
+*        350 deadbeef 00000002
+*        351 deadbeef 00000002
+*        352 deadbeef 00000002
+*        353 deadbeef 00000002
+*        354 deadbeef 00000001
+*        355 deadbeef 00000003
+*        356 deadbeef 00000002
+*        357 deadbeef 00000002
+*        358 deadbeef 00000001
+*        359 deadbeef 00000002
+*        360 deadbeef 00000003
+*        361 deadbeef 00000002
+*        362 deadbeef 00000001
+*        363 deadbeef 00000003
+*        364 deadbeef 00000003
+*        365 deadbeef 00000002
+*        366 deadbeef 00000003
+*        367 deadbeef 00000001
+*        368 deadbeef 00000003
+*        369 deadbeef 00000002
+*        370 deadbeef 00000003
+*        371 deadbeef 00000003
+*        372 deadbeef 00000003
+*        373 deadbeef 00000002
+*        374 deadbeef 00000003
+*        375 deadbeef 00000002
+*        376 deadbeef 00000001
+*        377 deadbeef 00000001
+*        378 deadbeef 00000001
+*        379 deadbeef 00000002
+*        380 deadbeef 00000001
+*        381 deadbeef 00000003
+*        382 deadbeef 00000001
+*        383 deadbeef 00000001
+*        384 deadbeef 00000003
+*        385 deadbeef 00000001
+*        386 deadbeef 00000001
+*        387 deadbeef 00000003
+*        388 deadbeef 00000001
+*        389 deadbeef 00000003
+*        390 deadbeef 00000001
+*        391 deadbeef 00000003
+*        392 deadbeef 00000001
+*        393 deadbeef 00000003
+*        394 deadbeef 00000001
+*        395 deadbeef 00000003
+*        396 deadbeef 00000001
+*        397 deadbeef 00000003
+*        398 deadbeef 00000001
+*        399 deadbeef 00000001
+*        400 deadbeef 00000003
+*        401 deadbeef 00000001
+*        402 deadbeef 00000001
+*        403 deadbeef 00000002
+*        404 deadbeef 00000002
+*        405 deadbeef 00000003
+*        406 deadbeef 00000002
+*        407 deadbeef 00000002
+*        408 deadbeef 00000002
+*        409 deadbeef 00000003
+*        410 deadbeef 00000002
+*        411 deadbeef 00000002
+*        412 deadbeef 00000002
+*        413 deadbeef 00000002
+*        414 deadbeef 00000002
+*        415 deadbeef 00000002
+*        416 deadbeef 00000002
+*        417 deadbeef 00000002
+*        418 deadbeef 00000002
+*        419 deadbeef 00000001
+*        420 deadbeef 00000002
+*        421 deadbeef 00000002
+*        422 deadbeef 00000002
+*        423 deadbeef 00000003
+*        424 deadbeef 00000002
+*        425 deadbeef 00000003
+*        426 deadbeef 00000002
+*        427 deadbeef 00000003
+*        428 deadbeef 00000003
+*        429 deadbeef 00000002
+*        430 deadbeef 00000002
+*        431 deadbeef 00000001
+*        432 deadbeef 00000003
+*        433 deadbeef 00000001
+*        434 deadbeef 00000002
+*        435 deadbeef 00000003
+*        436 deadbeef 00000001
+*        437 deadbeef 00000002
+*        438 deadbeef 00000002
+*        439 deadbeef 00000001
+*        440 deadbeef 00000002
+*        441 deadbeef 00000003
+*        442 deadbeef 00000001
+*        443 deadbeef 00000002
+*        444 deadbeef 00000002
+*        445 deadbeef 00000003
+*        446 deadbeef 00000003
+*        447 deadbeef 00000002
+*        448 deadbeef 00000002
+*        449 deadbeef 00000003
+*        450 deadbeef 00000002
+*        451 deadbeef 00000002
+*        452 deadbeef 00000002
+*        453 deadbeef 00000002
+*        454 deadbeef 00000002
+*        455 deadbeef 00000001
+*        456 deadbeef 00000002
+*        457 deadbeef 00000002
+*        458 deadbeef 00000002
+*        459 deadbeef 00000001
+*        460 deadbeef 00000002
+*        461 deadbeef 00000003
+*        462 deadbeef 00000002
+*        463 deadbeef 00000003
+*        464 deadbeef 00000002
+*        465 deadbeef 00000002
+*        466 deadbeef 00000002
+*        467 deadbeef 00000001
+*        468 deadbeef 00000002
+*        469 deadbeef 00000003
+*        470 deadbeef 00000002
+*        471 deadbeef 00000001
+*        472 deadbeef 00000003
+*        473 deadbeef 00000002
+*        474 deadbeef 00000002
+*        475 deadbeef 00000002
+*        476 deadbeef 00000002
+*        477 deadbeef 00000003
+*        478 deadbeef 00000002
+*        479 deadbeef 00000002
+*        480 deadbeef 00000002
+*        481 deadbeef 00000001
+*        482 deadbeef 00000002
+*        483 deadbeef 00000003
+*        484 deadbeef 00000002
+*        485 deadbeef 00000001
+*        486 deadbeef 00000001
+*        487 deadbeef 00000002
+*        488 deadbeef 00000002
+*        489 deadbeef 00000001
+*        490 deadbeef 00000001
+*        491 deadbeef 00000003
+*        492 deadbeef 00000002
+*        493 deadbeef 00000001
+*        494 deadbeef 00000003
+*        495 deadbeef 00000003
+*        496 deadbeef 00000002
+*        497 deadbeef 00000001
+*        498 deadbeef 00000002
+*        499 deadbeef 00000001
+*        500 deadbeef 00000003
+*        501 deadbeef 00000002
+*        502 deadbeef 00000002
+*        503 deadbeef 00000003
+*        504 deadbeef 00000001
+*        505 deadbeef 00000003
+*        506 deadbeef 00000003
+*        507 deadbeef 00000003
+*        508 deadbeef 00000001
+*        509 deadbeef 00000001
+*        510 deadbeef 00000002
+*        511 deadbeef 00000003
+*        512 deadbeef 00000003
+*        513 deadbeef 00000003
+*        514 deadbeef 00000003
+*        515 deadbeef 00000003
+*        516 deadbeef 00000003
+*        517 deadbeef 00000003
+*        518 deadbeef 00000001
+*        519 deadbeef 00000001
+*        520 deadbeef 00000001
+*        521 deadbeef 00000003
+*        522 deadbeef 00000001
+*        523 deadbeef 00000003
+*        524 deadbeef 00000002
+*        525 deadbeef 00000003
+*        526 deadbeef 00000001
+*        527 deadbeef 00000001
+*        528 deadbeef 00000002
+*        529 deadbeef 00000003
+*        530 deadbeef 00000003
+*        531 deadbeef 00000002
+*        532 deadbeef 00000002
+*        533 deadbeef 00000003
+*        534 deadbeef 00000002
+*        535 deadbeef 00000001
+*        536 deadbeef 00000002
+*        537 deadbeef 00000003
+*        538 deadbeef 00000001
+*        539 deadbeef 00000002
+*        540 deadbeef 00000002
+*        541 deadbeef 00000003
+*        542 deadbeef 00000002
+*        543 deadbeef 00000001
+*        544 deadbeef 00000003
+*        545 deadbeef 00000002
+*        546 deadbeef 00000002
+*        547 deadbeef 00000001
+*        548 deadbeef 00000002
+*        549 deadbeef 00000001
+*        550 deadbeef 00000003
+*        551 deadbeef 00000003
+*        552 deadbeef 00000003
+*        553 deadbeef 00000001
+*        554 deadbeef 00000002
+*        555 deadbeef 00000001
+*        556 deadbeef 00000003
+*        557 deadbeef 00000001
+*        558 deadbeef 00000003
+*        559 deadbeef 00000003
+*        560 deadbeef 00000001
+*        561 deadbeef 00000003
+*        562 deadbeef 00000002
+*        563 deadbeef 00000001
+*        564 deadbeef 00000003
+*        565 deadbeef 00000001
+*        566 deadbeef 00000001
+*        567 deadbeef 00000001
+*        568 deadbeef 00000002
+*        569 deadbeef 00000003
+*        570 deadbeef 00000001
+*        571 deadbeef 00000002
+*        572 deadbeef 00000002
+*        573 deadbeef 00000003
+*        574 deadbeef 00000002
+*        575 deadbeef 00000002
+*        576 deadbeef 00000002
+*        577 deadbeef 00000002
+*        578 deadbeef 00000002
+*        579 deadbeef 00000002
+*        580 deadbeef 00000002
+*        581 deadbeef 00000002
+*        582 deadbeef 00000002
+*        583 deadbeef 00000002
+*        584 deadbeef 00000002
+*        585 deadbeef 00000002
+*        586 deadbeef 00000002
+*        587 deadbeef 00000001
+*        588 deadbeef 00000002
+*        589 deadbeef 00000002
+*        590 deadbeef 00000002
+         591 6f5ca309 6f5ca309
+</br></div></td>
         </tr></tbody>
         
-        <tbody class= "passed  results-table-row" >
+        <tbody class= "failed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bgeu-01.S</td>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bgeu-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log">commit_id:b91f98f3a0e908bad4680c2e3901fbc24b63a563
 MACROS:
 TEST_CASE_1=True
-XLEN=32</br></div></td>
+XLEN=32
+File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bgeu-01.S/dut/DUT-venomcpu.signature
+File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bgeu-01.S/ref/Reference-sail_c_simulator.signature
+Match  Line#    File1    File2
+*        304 deadbeef 00000003
+*        305 deadbeef 00000002
+*        306 deadbeef 00000002
+*        307 deadbeef 00000001
+*        308 deadbeef 00000002
+*        309 deadbeef 00000002
+*        310 deadbeef 00000003
+*        311 deadbeef 00000001
+*        312 deadbeef 00000003
+*        313 deadbeef 00000002
+*        314 deadbeef 00000002
+*        315 deadbeef 00000001
+*        316 deadbeef 00000002
+*        317 deadbeef 00000002
+*        318 deadbeef 00000001
+*        319 deadbeef 00000003
+*        320 deadbeef 00000002
+*        321 deadbeef 00000002
+*        322 deadbeef 00000003
+*        323 deadbeef 00000002
+*        324 deadbeef 00000002
+*        325 deadbeef 00000001
+*        326 deadbeef 00000001
+*        327 deadbeef 00000002
+*        328 deadbeef 00000002
+*        329 deadbeef 00000002
+*        330 deadbeef 00000002
+*        331 deadbeef 00000002
+*        332 deadbeef 00000002
+*        333 deadbeef 00000002
+*        334 deadbeef 00000002
+*        335 deadbeef 00000003
+*        336 deadbeef 00000002
+*        337 deadbeef 00000001
+*        338 deadbeef 00000002
+*        339 deadbeef 00000002
+*        340 deadbeef 00000002
+*        341 deadbeef 00000002
+*        342 deadbeef 00000002
+*        343 deadbeef 00000002
+*        344 deadbeef 00000002
+*        345 deadbeef 00000002
+*        346 deadbeef 00000002
+*        347 deadbeef 00000002
+*        348 deadbeef 00000002
+*        349 deadbeef 00000002
+*        350 deadbeef 00000002
+*        351 deadbeef 00000003
+*        352 deadbeef 00000002
+*        353 deadbeef 00000003
+*        354 deadbeef 00000002
+*        355 deadbeef 00000002
+*        356 deadbeef 00000001
+*        357 deadbeef 00000003
+*        358 deadbeef 00000002
+*        359 deadbeef 00000003
+*        360 deadbeef 00000003
+*        361 deadbeef 00000003
+*        362 deadbeef 00000003
+*        363 deadbeef 00000003
+*        364 deadbeef 00000002
+*        365 deadbeef 00000003
+*        366 deadbeef 00000001
+*        367 deadbeef 00000002
+*        368 deadbeef 00000003
+*        369 deadbeef 00000003
+*        370 deadbeef 00000002
+*        371 deadbeef 00000002
+*        372 deadbeef 00000001
+*        373 deadbeef 00000003
+*        374 deadbeef 00000002
+*        375 deadbeef 00000003
+*        376 deadbeef 00000003
+*        377 deadbeef 00000001
+*        378 deadbeef 00000001
+*        379 deadbeef 00000003
+*        380 deadbeef 00000002
+*        381 deadbeef 00000001
+*        382 deadbeef 00000003
+*        383 deadbeef 00000003
+*        384 deadbeef 00000003
+*        385 deadbeef 00000001
+*        386 deadbeef 00000003
+*        387 deadbeef 00000001
+*        388 deadbeef 00000003
+*        389 deadbeef 00000001
+*        390 deadbeef 00000003
+*        391 deadbeef 00000003
+*        392 deadbeef 00000001
+*        393 deadbeef 00000003
+*        394 deadbeef 00000003
+*        395 deadbeef 00000003
+*        396 deadbeef 00000002
+*        397 deadbeef 00000001
+*        398 deadbeef 00000003
+*        399 deadbeef 00000003
+*        400 deadbeef 00000003
+*        401 deadbeef 00000001
+*        402 deadbeef 00000001
+*        403 deadbeef 00000002
+*        404 deadbeef 00000002
+*        405 deadbeef 00000002
+*        406 deadbeef 00000002
+*        407 deadbeef 00000002
+*        408 deadbeef 00000002
+*        409 deadbeef 00000003
+*        410 deadbeef 00000002
+*        411 deadbeef 00000003
+*        412 deadbeef 00000002
+*        413 deadbeef 00000002
+*        414 deadbeef 00000001
+*        415 deadbeef 00000002
+*        416 deadbeef 00000002
+*        417 deadbeef 00000002
+*        418 deadbeef 00000002
+*        419 deadbeef 00000002
+*        420 deadbeef 00000002
+*        421 deadbeef 00000002
+*        422 deadbeef 00000002
+*        423 deadbeef 00000002
+*        424 deadbeef 00000002
+*        425 deadbeef 00000001
+*        426 deadbeef 00000002
+*        427 deadbeef 00000001
+*        428 deadbeef 00000002
+*        429 deadbeef 00000002
+*        430 deadbeef 00000001
+*        431 deadbeef 00000002
+*        432 deadbeef 00000002
+*        433 deadbeef 00000003
+*        434 deadbeef 00000001
+*        435 deadbeef 00000003
+*        436 deadbeef 00000001
+*        437 deadbeef 00000002
+*        438 deadbeef 00000002
+*        439 deadbeef 00000001
+*        440 deadbeef 00000003
+*        441 deadbeef 00000002
+*        442 deadbeef 00000003
+*        443 deadbeef 00000003
+*        444 deadbeef 00000002
+*        445 deadbeef 00000002
+*        446 deadbeef 00000001
+*        447 deadbeef 00000002
+*        448 deadbeef 00000002
+*        449 deadbeef 00000003
+*        450 deadbeef 00000003
+*        451 deadbeef 00000001
+*        452 deadbeef 00000003
+*        453 deadbeef 00000001
+*        454 deadbeef 00000002
+*        455 deadbeef 00000001
+*        456 deadbeef 00000003
+*        457 deadbeef 00000002
+*        458 deadbeef 00000001
+*        459 deadbeef 00000001
+*        460 deadbeef 00000001
+*        461 deadbeef 00000001
+*        462 deadbeef 00000001
+*        463 deadbeef 00000002
+*        464 deadbeef 00000003
+*        465 deadbeef 00000003
+*        466 deadbeef 00000003
+*        467 deadbeef 00000003
+*        468 deadbeef 00000003
+*        469 deadbeef 00000001
+*        470 deadbeef 00000003
+*        471 deadbeef 00000003
+*        472 deadbeef 00000003
+*        473 deadbeef 00000002
+*        474 deadbeef 00000002
+*        475 deadbeef 00000003
+*        476 deadbeef 00000002
+*        477 deadbeef 00000002
+*        478 deadbeef 00000002
+*        479 deadbeef 00000001
+*        480 deadbeef 00000002
+*        481 deadbeef 00000003
+*        482 deadbeef 00000002
+*        483 deadbeef 00000002
+*        484 deadbeef 00000003
+*        485 deadbeef 00000002
+*        486 deadbeef 00000002
+*        487 deadbeef 00000003
+*        488 deadbeef 00000002
+*        489 deadbeef 00000002
+*        490 deadbeef 00000002
+*        491 deadbeef 00000001
+*        492 deadbeef 00000002
+*        493 deadbeef 00000002
+*        494 deadbeef 00000002
+*        495 deadbeef 00000001
+*        496 deadbeef 00000002
+*        497 deadbeef 00000001
+*        498 deadbeef 00000002
+*        499 deadbeef 00000002
+*        500 deadbeef 00000003
+*        501 deadbeef 00000002
+*        502 deadbeef 00000002
+*        503 deadbeef 00000003
+*        504 deadbeef 00000003
+*        505 deadbeef 00000002
+*        506 deadbeef 00000001
+*        507 deadbeef 00000002
+*        508 deadbeef 00000002
+*        509 deadbeef 00000003
+*        510 deadbeef 00000002
+*        511 deadbeef 00000002
+*        512 deadbeef 00000003
+*        513 deadbeef 00000003
+*        514 deadbeef 00000002
+*        515 deadbeef 00000002
+*        516 deadbeef 00000001
+*        517 deadbeef 00000002
+*        518 deadbeef 00000002
+*        519 deadbeef 00000001
+*        520 deadbeef 00000003
+*        521 deadbeef 00000002
+*        522 deadbeef 00000003
+*        523 deadbeef 00000003
+*        524 deadbeef 00000002
+*        525 deadbeef 00000001
+*        526 deadbeef 00000003
+*        527 deadbeef 00000002
+*        528 deadbeef 00000001
+*        529 deadbeef 00000003
+*        530 deadbeef 00000001
+*        531 deadbeef 00000003
+*        532 deadbeef 00000003
+*        533 deadbeef 00000002
+*        534 deadbeef 00000001
+*        535 deadbeef 00000003
+*        536 deadbeef 00000002
+*        537 deadbeef 00000001
+*        538 deadbeef 00000003
+*        539 deadbeef 00000003
+*        540 deadbeef 00000002
+*        541 deadbeef 00000001
+*        542 deadbeef 00000003
+*        543 deadbeef 00000002
+*        544 deadbeef 00000001
+*        545 deadbeef 00000001
+*        546 deadbeef 00000003
+*        547 deadbeef 00000003
+*        548 deadbeef 00000003
+*        549 deadbeef 00000003
+*        550 deadbeef 00000003
+*        551 deadbeef 00000003
+*        552 deadbeef 00000003
+*        553 deadbeef 00000003
+*        554 deadbeef 00000001
+*        555 deadbeef 00000001
+*        556 deadbeef 00000003
+*        557 deadbeef 00000001
+*        558 deadbeef 00000003
+*        559 deadbeef 00000003
+*        560 deadbeef 00000003
+*        561 deadbeef 00000001
+*        562 deadbeef 00000001
+*        563 deadbeef 00000001
+*        564 deadbeef 00000003
+*        565 deadbeef 00000001
+*        566 deadbeef 00000003
+*        567 deadbeef 00000003
+*        568 deadbeef 00000001
+*        569 deadbeef 00000003
+*        570 deadbeef 00000003
+*        571 deadbeef 00000003
+*        572 deadbeef 00000002
+*        573 deadbeef 00000002
+*        574 deadbeef 00000003
+*        575 deadbeef 00000002
+*        576 deadbeef 00000002
+*        577 deadbeef 00000002
+*        578 deadbeef 00000001
+*        579 deadbeef 00000002
+*        580 deadbeef 00000003
+*        581 deadbeef 00000002
+*        582 deadbeef 00000002
+*        583 deadbeef 00000001
+*        584 deadbeef 00000002
+*        585 deadbeef 00000002
+*        586 deadbeef 00000002
+*        587 deadbeef 00000002
+*        588 deadbeef 00000002
+*        589 deadbeef 00000002
+*        590 deadbeef 00000001
+*        591 deadbeef 00000002
+*        592 deadbeef 00000002
+*        593 deadbeef 00000002
+*        594 deadbeef 00000003
+*        595 deadbeef 00000002
+*        596 deadbeef 00000003
+*        597 deadbeef 00000002
+*        598 deadbeef 00000002
+*        599 deadbeef 00000002
+*        600 deadbeef 00000001
+*        601 deadbeef 00000001
+*        602 deadbeef 00000002
+*        603 deadbeef 00000001
+*        604 deadbeef 00000003
+*        605 deadbeef 00000003
+*        606 deadbeef 00000001
+*        607 deadbeef 00000002
+*        608 deadbeef 00000002
+*        609 deadbeef 00000003
+*        610 deadbeef 00000001
+*        611 deadbeef 00000002
+*        612 deadbeef 00000003
+*        613 deadbeef 00000001
+*        614 deadbeef 00000002
+*        615 deadbeef 00000002
+*        616 deadbeef 00000001
+*        617 deadbeef 00000003
+*        618 deadbeef 00000002
+*        619 deadbeef 00000001
+*        620 deadbeef 00000003
+*        621 deadbeef 00000001
+*        622 deadbeef 00000003
+*        623 deadbeef 00000003
+*        624 deadbeef 00000002
+*        625 deadbeef 00000003
+*        626 deadbeef 00000001
+*        627 deadbeef 00000003
+*        628 deadbeef 00000003
+*        629 deadbeef 00000003
+*        630 deadbeef 00000003
+*        631 deadbeef 00000003
+*        632 deadbeef 00000003
+*        633 deadbeef 00000002
+*        634 deadbeef 00000003
+*        635 deadbeef 00000001
+*        636 deadbeef 00000003
+*        637 deadbeef 00000003
+*        638 deadbeef 00000003
+*        639 deadbeef 00000001
+*        640 deadbeef 00000002
+*        641 deadbeef 00000003
+*        642 deadbeef 00000001
+*        643 deadbeef 00000001
+*        644 deadbeef 00000003
+*        645 deadbeef 00000003
+*        646 deadbeef 00000001
+*        647 deadbeef 00000003
+*        648 deadbeef 00000002
+*        649 deadbeef 00000002
+*        650 deadbeef 00000003
+*        651 deadbeef 00000002
+*        652 deadbeef 00000002
+*        653 deadbeef 00000003
+*        654 deadbeef 00000003
+*        655 deadbeef 00000002
+*        656 deadbeef 00000001
+*        657 deadbeef 00000002
+*        658 deadbeef 00000002
+*        659 deadbeef 00000003
+*        660 deadbeef 00000002
+*        661 deadbeef 00000002
+*        662 deadbeef 00000001
+*        663 deadbeef 00000002
+*        664 deadbeef 00000002
+*        665 deadbeef 00000002
+*        666 deadbeef 00000001
+*        667 deadbeef 00000002
+*        668 deadbeef 00000002
+*        669 deadbeef 00000003
+*        670 deadbeef 00000003
+*        671 deadbeef 00000002
+*        672 deadbeef 00000002
+*        673 deadbeef 00000002
+*        674 deadbeef 00000002
+*        675 deadbeef 00000002
+*        676 deadbeef 00000002
+*        677 deadbeef 00000002
+*        678 deadbeef 00000002
+*        679 deadbeef 00000001
+*        680 deadbeef 00000002
+*        681 deadbeef 00000002
+*        682 deadbeef 00000002
+*        683 deadbeef 00000002
+*        684 deadbeef 00000002
+*        685 deadbeef 00000002
+*        686 deadbeef 00000002
+*        687 deadbeef 00000002
+*        688 deadbeef 00000002
+*        689 deadbeef 00000002
+*        690 deadbeef 00000002
+*        691 deadbeef 00000002
+*        692 deadbeef 00000002
+*        693 deadbeef 00000002
+*        694 deadbeef 00000002
+*        695 deadbeef 00000003
+*        696 deadbeef 00000002
+*        697 deadbeef 00000003
+*        698 deadbeef 00000002
+*        699 deadbeef 00000003
+*        700 deadbeef 00000002
+*        701 deadbeef 00000002
+*        702 deadbeef 00000003
+*        703 deadbeef 00000003
+*        704 deadbeef 00000003
+*        705 deadbeef 00000003
+*        706 deadbeef 00000002
+*        707 deadbeef 00000002
+*        708 deadbeef 00000001
+*        709 deadbeef 00000002
+*        710 deadbeef 00000002
+*        711 deadbeef 00000001
+*        712 deadbeef 00000003
+*        713 deadbeef 00000002
+*        714 deadbeef 00000002
+*        715 deadbeef 00000003
+*        716 deadbeef 00000002
+*        717 deadbeef 00000002
+*        718 deadbeef 00000001
+*        719 deadbeef 00000001
+*        720 deadbeef 00000003
+*        721 deadbeef 00000003
+*        722 deadbeef 00000003
+*        723 deadbeef 00000002
+*        724 deadbeef 00000003
+*        725 deadbeef 00000002
+*        726 deadbeef 00000001
+         727 6f5ca309 6f5ca309
+</br></div></td>
         </tr></tbody>
         
-        <tbody class= "passed  results-table-row" >
+        <tbody class= "failed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/blt-01.S</td>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/blt-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log">commit_id:b91f98f3a0e908bad4680c2e3901fbc24b63a563
 MACROS:
 TEST_CASE_1=True
-XLEN=32</br></div></td>
+XLEN=32
+File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/blt-01.S/dut/DUT-venomcpu.signature
+File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/blt-01.S/ref/Reference-sail_c_simulator.signature
+Match  Line#    File1    File2
+*        303 deadbeef 00000002
+*        304 deadbeef 00000002
+*        305 deadbeef 00000002
+*        306 deadbeef 00000003
+*        307 deadbeef 00000002
+*        308 deadbeef 00000001
+*        309 deadbeef 00000002
+*        310 deadbeef 00000002
+*        311 deadbeef 00000002
+*        312 deadbeef 00000001
+*        313 deadbeef 00000002
+*        314 deadbeef 00000002
+*        315 deadbeef 00000001
+*        316 deadbeef 00000001
+*        317 deadbeef 00000002
+*        318 deadbeef 00000003
+*        319 deadbeef 00000001
+*        320 deadbeef 00000001
+*        321 deadbeef 00000002
+*        322 deadbeef 00000001
+*        323 deadbeef 00000001
+*        324 deadbeef 00000003
+*        325 deadbeef 00000001
+*        326 deadbeef 00000003
+*        327 deadbeef 00000002
+*        328 deadbeef 00000003
+*        329 deadbeef 00000002
+*        330 deadbeef 00000002
+*        331 deadbeef 00000001
+*        332 deadbeef 00000001
+*        333 deadbeef 00000002
+*        334 deadbeef 00000001
+*        335 deadbeef 00000002
+*        336 deadbeef 00000003
+*        337 deadbeef 00000002
+*        338 deadbeef 00000002
+*        339 deadbeef 00000001
+*        340 deadbeef 00000003
+*        341 deadbeef 00000003
+*        342 deadbeef 00000001
+*        343 deadbeef 00000002
+*        344 deadbeef 00000002
+*        345 deadbeef 00000001
+*        346 deadbeef 00000003
+*        347 deadbeef 00000002
+*        348 deadbeef 00000001
+*        349 deadbeef 00000002
+*        350 deadbeef 00000001
+*        351 deadbeef 00000002
+*        352 deadbeef 00000002
+*        353 deadbeef 00000002
+*        354 deadbeef 00000003
+*        355 deadbeef 00000002
+*        356 deadbeef 00000002
+*        357 deadbeef 00000002
+*        358 deadbeef 00000001
+*        359 deadbeef 00000002
+*        360 deadbeef 00000002
+*        361 deadbeef 00000002
+*        362 deadbeef 00000003
+*        363 deadbeef 00000002
+*        364 deadbeef 00000001
+*        365 deadbeef 00000002
+*        366 deadbeef 00000002
+*        367 deadbeef 00000002
+*        368 deadbeef 00000001
+*        369 deadbeef 00000002
+*        370 deadbeef 00000002
+*        371 deadbeef 00000002
+*        372 deadbeef 00000002
+*        373 deadbeef 00000002
+*        374 deadbeef 00000002
+*        375 deadbeef 00000002
+*        376 deadbeef 00000002
+*        377 deadbeef 00000002
+*        378 deadbeef 00000002
+*        379 deadbeef 00000002
+*        380 deadbeef 00000002
+*        381 deadbeef 00000002
+*        382 deadbeef 00000002
+*        383 deadbeef 00000002
+*        384 deadbeef 00000002
+*        385 deadbeef 00000002
+*        386 deadbeef 00000002
+*        387 deadbeef 00000002
+*        388 deadbeef 00000002
+*        389 deadbeef 00000002
+*        390 deadbeef 00000002
+*        391 deadbeef 00000002
+*        392 deadbeef 00000002
+*        393 deadbeef 00000003
+*        394 deadbeef 00000003
+*        395 deadbeef 00000002
+*        396 deadbeef 00000001
+*        397 deadbeef 00000003
+*        398 deadbeef 00000001
+*        399 deadbeef 00000002
+*        400 deadbeef 00000003
+*        401 deadbeef 00000003
+*        402 deadbeef 00000001
+*        403 deadbeef 00000001
+*        404 deadbeef 00000001
+*        405 deadbeef 00000003
+*        406 deadbeef 00000003
+*        407 deadbeef 00000001
+*        408 deadbeef 00000003
+*        409 deadbeef 00000002
+*        410 deadbeef 00000003
+*        411 deadbeef 00000003
+*        412 deadbeef 00000003
+*        413 deadbeef 00000002
+*        414 deadbeef 00000001
+*        415 deadbeef 00000002
+*        416 deadbeef 00000003
+*        417 deadbeef 00000002
+*        418 deadbeef 00000002
+*        419 deadbeef 00000001
+*        420 deadbeef 00000003
+*        421 deadbeef 00000002
+*        422 deadbeef 00000002
+*        423 deadbeef 00000002
+*        424 deadbeef 00000003
+*        425 deadbeef 00000002
+*        426 deadbeef 00000002
+*        427 deadbeef 00000001
+*        428 deadbeef 00000001
+*        429 deadbeef 00000002
+*        430 deadbeef 00000003
+*        431 deadbeef 00000002
+*        432 deadbeef 00000002
+*        433 deadbeef 00000001
+*        434 deadbeef 00000003
+*        435 deadbeef 00000002
+*        436 deadbeef 00000002
+*        437 deadbeef 00000003
+*        438 deadbeef 00000001
+*        439 deadbeef 00000002
+*        440 deadbeef 00000003
+*        441 deadbeef 00000001
+*        442 deadbeef 00000001
+*        443 deadbeef 00000003
+*        444 deadbeef 00000003
+*        445 deadbeef 00000002
+*        446 deadbeef 00000003
+*        447 deadbeef 00000003
+*        448 deadbeef 00000003
+*        449 deadbeef 00000002
+*        450 deadbeef 00000003
+*        451 deadbeef 00000002
+*        452 deadbeef 00000001
+*        453 deadbeef 00000002
+*        454 deadbeef 00000003
+*        455 deadbeef 00000003
+*        456 deadbeef 00000003
+*        457 deadbeef 00000002
+*        458 deadbeef 00000003
+*        459 deadbeef 00000001
+*        460 deadbeef 00000002
+*        461 deadbeef 00000002
+*        462 deadbeef 00000001
+*        463 deadbeef 00000003
+*        464 deadbeef 00000003
+*        465 deadbeef 00000003
+*        466 deadbeef 00000002
+*        467 deadbeef 00000003
+*        468 deadbeef 00000003
+*        469 deadbeef 00000001
+*        470 deadbeef 00000002
+*        471 deadbeef 00000003
+*        472 deadbeef 00000002
+*        473 deadbeef 00000003
+*        474 deadbeef 00000002
+*        475 deadbeef 00000002
+*        476 deadbeef 00000001
+*        477 deadbeef 00000003
+*        478 deadbeef 00000002
+*        479 deadbeef 00000002
+*        480 deadbeef 00000002
+*        481 deadbeef 00000003
+*        482 deadbeef 00000002
+*        483 deadbeef 00000002
+*        484 deadbeef 00000002
+*        485 deadbeef 00000003
+*        486 deadbeef 00000002
+*        487 deadbeef 00000003
+*        488 deadbeef 00000002
+*        489 deadbeef 00000002
+*        490 deadbeef 00000003
+*        491 deadbeef 00000003
+*        492 deadbeef 00000002
+*        493 deadbeef 00000002
+*        494 deadbeef 00000002
+*        495 deadbeef 00000002
+*        496 deadbeef 00000002
+*        497 deadbeef 00000002
+*        498 deadbeef 00000002
+*        499 deadbeef 00000003
+*        500 deadbeef 00000002
+*        501 deadbeef 00000002
+*        502 deadbeef 00000002
+*        503 deadbeef 00000002
+*        504 deadbeef 00000002
+*        505 deadbeef 00000002
+*        506 deadbeef 00000002
+*        507 deadbeef 00000002
+*        508 deadbeef 00000002
+*        509 deadbeef 00000002
+*        510 deadbeef 00000002
+*        511 deadbeef 00000002
+*        512 deadbeef 00000002
+*        513 deadbeef 00000001
+*        514 deadbeef 00000002
+*        515 deadbeef 00000002
+*        516 deadbeef 00000002
+*        517 deadbeef 00000001
+*        518 deadbeef 00000002
+*        519 deadbeef 00000002
+*        520 deadbeef 00000003
+*        521 deadbeef 00000003
+*        522 deadbeef 00000002
+*        523 deadbeef 00000001
+*        524 deadbeef 00000002
+*        525 deadbeef 00000003
+*        526 deadbeef 00000002
+*        527 deadbeef 00000002
+*        528 deadbeef 00000003
+*        529 deadbeef 00000003
+*        530 deadbeef 00000002
+*        531 deadbeef 00000001
+*        532 deadbeef 00000002
+*        533 deadbeef 00000002
+*        534 deadbeef 00000003
+*        535 deadbeef 00000003
+*        536 deadbeef 00000002
+*        537 deadbeef 00000001
+*        538 deadbeef 00000002
+*        539 deadbeef 00000002
+*        540 deadbeef 00000002
+*        541 deadbeef 00000002
+*        542 deadbeef 00000002
+*        543 deadbeef 00000003
+*        544 deadbeef 00000002
+*        545 deadbeef 00000002
+*        546 deadbeef 00000002
+*        547 deadbeef 00000002
+*        548 deadbeef 00000002
+*        549 deadbeef 00000002
+*        550 deadbeef 00000002
+*        551 deadbeef 00000003
+*        552 deadbeef 00000002
+*        553 deadbeef 00000002
+*        554 deadbeef 00000002
+*        555 deadbeef 00000002
+*        556 deadbeef 00000002
+*        557 deadbeef 00000003
+*        558 deadbeef 00000002
+*        559 deadbeef 00000002
+*        560 deadbeef 00000001
+*        561 deadbeef 00000003
+*        562 deadbeef 00000002
+*        563 deadbeef 00000001
+*        564 deadbeef 00000001
+*        565 deadbeef 00000003
+*        566 deadbeef 00000003
+*        567 deadbeef 00000003
+*        568 deadbeef 00000001
+*        569 deadbeef 00000001
+*        570 deadbeef 00000003
+*        571 deadbeef 00000001
+*        572 deadbeef 00000001
+*        573 deadbeef 00000003
+*        574 deadbeef 00000003
+*        575 deadbeef 00000003
+*        576 deadbeef 00000002
+*        577 deadbeef 00000003
+*        578 deadbeef 00000002
+*        579 deadbeef 00000002
+*        580 deadbeef 00000002
+         581 6f5ca309 6f5ca309
+</br></div></td>
         </tr></tbody>
         
-        <tbody class= "passed  results-table-row" >
+        <tbody class= "failed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bltu-01.S</td>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bltu-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log">commit_id:b91f98f3a0e908bad4680c2e3901fbc24b63a563
 MACROS:
 TEST_CASE_1=True
-XLEN=32</br></div></td>
+XLEN=32
+File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bltu-01.S/dut/DUT-venomcpu.signature
+File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bltu-01.S/ref/Reference-sail_c_simulator.signature
+Match  Line#    File1    File2
+*        304 deadbeef 00000002
+*        305 deadbeef 00000003
+*        306 deadbeef 00000001
+*        307 deadbeef 00000002
+*        308 deadbeef 00000002
+*        309 deadbeef 00000002
+*        310 deadbeef 00000002
+*        311 deadbeef 00000001
+*        312 deadbeef 00000001
+*        313 deadbeef 00000002
+*        314 deadbeef 00000003
+*        315 deadbeef 00000003
+*        316 deadbeef 00000002
+*        317 deadbeef 00000002
+*        318 deadbeef 00000003
+*        319 deadbeef 00000001
+*        320 deadbeef 00000002
+*        321 deadbeef 00000003
+*        322 deadbeef 00000003
+*        323 deadbeef 00000002
+*        324 deadbeef 00000002
+*        325 deadbeef 00000001
+*        326 deadbeef 00000003
+*        327 deadbeef 00000001
+*        328 deadbeef 00000001
+*        329 deadbeef 00000001
+*        330 deadbeef 00000003
+*        331 deadbeef 00000001
+*        332 deadbeef 00000003
+*        333 deadbeef 00000002
+*        334 deadbeef 00000001
+*        335 deadbeef 00000002
+*        336 deadbeef 00000001
+*        337 deadbeef 00000001
+*        338 deadbeef 00000003
+*        339 deadbeef 00000003
+*        340 deadbeef 00000003
+*        341 deadbeef 00000003
+*        342 deadbeef 00000001
+*        343 deadbeef 00000003
+*        344 deadbeef 00000003
+*        345 deadbeef 00000001
+*        346 deadbeef 00000003
+*        347 deadbeef 00000001
+*        348 deadbeef 00000001
+*        349 deadbeef 00000002
+*        350 deadbeef 00000001
+*        351 deadbeef 00000002
+*        352 deadbeef 00000001
+*        353 deadbeef 00000001
+*        354 deadbeef 00000002
+*        355 deadbeef 00000002
+*        356 deadbeef 00000003
+*        357 deadbeef 00000002
+*        358 deadbeef 00000002
+*        359 deadbeef 00000002
+*        360 deadbeef 00000002
+*        361 deadbeef 00000002
+*        362 deadbeef 00000003
+*        363 deadbeef 00000002
+*        364 deadbeef 00000002
+*        365 deadbeef 00000003
+*        366 deadbeef 00000002
+*        367 deadbeef 00000002
+*        368 deadbeef 00000001
+*        369 deadbeef 00000001
+*        370 deadbeef 00000002
+*        371 deadbeef 00000002
+*        372 deadbeef 00000001
+*        373 deadbeef 00000002
+*        374 deadbeef 00000002
+*        375 deadbeef 00000002
+*        376 deadbeef 00000002
+*        377 deadbeef 00000002
+*        378 deadbeef 00000003
+*        379 deadbeef 00000002
+*        380 deadbeef 00000002
+*        381 deadbeef 00000002
+*        382 deadbeef 00000002
+*        383 deadbeef 00000002
+*        384 deadbeef 00000002
+*        385 deadbeef 00000002
+*        386 deadbeef 00000002
+*        387 deadbeef 00000002
+*        388 deadbeef 00000002
+*        389 deadbeef 00000002
+*        390 deadbeef 00000002
+*        391 deadbeef 00000002
+*        392 deadbeef 00000002
+*        393 deadbeef 00000002
+*        394 deadbeef 00000003
+*        395 deadbeef 00000002
+*        396 deadbeef 00000002
+*        397 deadbeef 00000002
+*        398 deadbeef 00000002
+*        399 deadbeef 00000002
+*        400 deadbeef 00000002
+*        401 deadbeef 00000002
+*        402 deadbeef 00000003
+*        403 deadbeef 00000003
+*        404 deadbeef 00000003
+*        405 deadbeef 00000001
+*        406 deadbeef 00000001
+*        407 deadbeef 00000003
+*        408 deadbeef 00000002
+*        409 deadbeef 00000003
+*        410 deadbeef 00000002
+*        411 deadbeef 00000003
+*        412 deadbeef 00000003
+*        413 deadbeef 00000002
+*        414 deadbeef 00000003
+*        415 deadbeef 00000003
+*        416 deadbeef 00000003
+*        417 deadbeef 00000003
+*        418 deadbeef 00000001
+*        419 deadbeef 00000001
+*        420 deadbeef 00000003
+*        421 deadbeef 00000003
+*        422 deadbeef 00000001
+*        423 deadbeef 00000003
+*        424 deadbeef 00000002
+*        425 deadbeef 00000003
+*        426 deadbeef 00000002
+*        427 deadbeef 00000001
+*        428 deadbeef 00000003
+*        429 deadbeef 00000002
+*        430 deadbeef 00000003
+*        431 deadbeef 00000003
+*        432 deadbeef 00000002
+*        433 deadbeef 00000002
+*        434 deadbeef 00000002
+*        435 deadbeef 00000002
+*        436 deadbeef 00000003
+*        437 deadbeef 00000001
+*        438 deadbeef 00000002
+*        439 deadbeef 00000002
+*        440 deadbeef 00000001
+*        441 deadbeef 00000002
+*        442 deadbeef 00000002
+*        443 deadbeef 00000001
+*        444 deadbeef 00000003
+*        445 deadbeef 00000002
+*        446 deadbeef 00000001
+*        447 deadbeef 00000001
+*        448 deadbeef 00000002
+*        449 deadbeef 00000002
+*        450 deadbeef 00000002
+*        451 deadbeef 00000002
+*        452 deadbeef 00000002
+*        453 deadbeef 00000003
+*        454 deadbeef 00000002
+*        455 deadbeef 00000002
+*        456 deadbeef 00000001
+*        457 deadbeef 00000002
+*        458 deadbeef 00000002
+*        459 deadbeef 00000002
+*        460 deadbeef 00000002
+*        461 deadbeef 00000002
+*        462 deadbeef 00000003
+*        463 deadbeef 00000002
+*        464 deadbeef 00000002
+*        465 deadbeef 00000002
+*        466 deadbeef 00000002
+*        467 deadbeef 00000002
+*        468 deadbeef 00000002
+*        469 deadbeef 00000002
+*        470 deadbeef 00000002
+*        471 deadbeef 00000002
+*        472 deadbeef 00000003
+*        473 deadbeef 00000003
+*        474 deadbeef 00000002
+*        475 deadbeef 00000003
+*        476 deadbeef 00000003
+*        477 deadbeef 00000001
+*        478 deadbeef 00000002
+*        479 deadbeef 00000003
+*        480 deadbeef 00000002
+*        481 deadbeef 00000003
+*        482 deadbeef 00000003
+*        483 deadbeef 00000002
+*        484 deadbeef 00000003
+*        485 deadbeef 00000003
+*        486 deadbeef 00000002
+*        487 deadbeef 00000001
+*        488 deadbeef 00000003
+*        489 deadbeef 00000001
+*        490 deadbeef 00000002
+*        491 deadbeef 00000001
+*        492 deadbeef 00000003
+*        493 deadbeef 00000003
+*        494 deadbeef 00000002
+*        495 deadbeef 00000001
+*        496 deadbeef 00000002
+*        497 deadbeef 00000001
+*        498 deadbeef 00000003
+*        499 deadbeef 00000002
+*        500 deadbeef 00000001
+*        501 deadbeef 00000001
+*        502 deadbeef 00000002
+*        503 deadbeef 00000002
+*        504 deadbeef 00000001
+*        505 deadbeef 00000002
+*        506 deadbeef 00000003
+*        507 deadbeef 00000003
+*        508 deadbeef 00000002
+*        509 deadbeef 00000001
+*        510 deadbeef 00000003
+*        511 deadbeef 00000002
+*        512 deadbeef 00000002
+*        513 deadbeef 00000001
+*        514 deadbeef 00000001
+*        515 deadbeef 00000002
+*        516 deadbeef 00000001
+*        517 deadbeef 00000001
+*        518 deadbeef 00000002
+*        519 deadbeef 00000002
+*        520 deadbeef 00000003
+*        521 deadbeef 00000002
+*        522 deadbeef 00000002
+*        523 deadbeef 00000001
+*        524 deadbeef 00000002
+*        525 deadbeef 00000002
+*        526 deadbeef 00000003
+*        527 deadbeef 00000002
+*        528 deadbeef 00000002
+*        529 deadbeef 00000002
+*        530 deadbeef 00000002
+*        531 deadbeef 00000002
+*        532 deadbeef 00000001
+*        533 deadbeef 00000002
+*        534 deadbeef 00000002
+*        535 deadbeef 00000003
+*        536 deadbeef 00000002
+*        537 deadbeef 00000002
+*        538 deadbeef 00000002
+*        539 deadbeef 00000001
+*        540 deadbeef 00000002
+*        541 deadbeef 00000002
+*        542 deadbeef 00000003
+*        543 deadbeef 00000002
+*        544 deadbeef 00000002
+*        545 deadbeef 00000002
+*        546 deadbeef 00000002
+*        547 deadbeef 00000002
+*        548 deadbeef 00000002
+*        549 deadbeef 00000002
+*        550 deadbeef 00000002
+*        551 deadbeef 00000002
+*        552 deadbeef 00000002
+*        553 deadbeef 00000002
+*        554 deadbeef 00000002
+*        555 deadbeef 00000002
+*        556 deadbeef 00000002
+*        557 deadbeef 00000002
+*        558 deadbeef 00000002
+*        559 deadbeef 00000002
+*        560 deadbeef 00000002
+*        561 deadbeef 00000002
+*        562 deadbeef 00000002
+*        563 deadbeef 00000002
+*        564 deadbeef 00000002
+*        565 deadbeef 00000002
+*        566 deadbeef 00000002
+*        567 deadbeef 00000002
+*        568 deadbeef 00000002
+*        569 deadbeef 00000002
+*        570 deadbeef 00000002
+*        571 deadbeef 00000003
+*        572 deadbeef 00000003
+*        573 deadbeef 00000002
+*        574 deadbeef 00000001
+*        575 deadbeef 00000001
+*        576 deadbeef 00000001
+*        577 deadbeef 00000002
+*        578 deadbeef 00000001
+*        579 deadbeef 00000002
+*        580 deadbeef 00000003
+*        581 deadbeef 00000003
+*        582 deadbeef 00000002
+*        583 deadbeef 00000001
+*        584 deadbeef 00000003
+*        585 deadbeef 00000003
+*        586 deadbeef 00000003
+*        587 deadbeef 00000001
+*        588 deadbeef 00000001
+*        589 deadbeef 00000002
+*        590 deadbeef 00000001
+*        591 deadbeef 00000003
+*        592 deadbeef 00000001
+*        593 deadbeef 00000002
+*        594 deadbeef 00000001
+*        595 deadbeef 00000002
+*        596 deadbeef 00000001
+*        597 deadbeef 00000001
+*        598 deadbeef 00000002
+*        599 deadbeef 00000002
+*        600 deadbeef 00000001
+*        601 deadbeef 00000002
+*        602 deadbeef 00000002
+*        603 deadbeef 00000002
+*        604 deadbeef 00000002
+*        605 deadbeef 00000003
+*        606 deadbeef 00000003
+*        607 deadbeef 00000002
+*        608 deadbeef 00000002
+*        609 deadbeef 00000003
+*        610 deadbeef 00000002
+*        611 deadbeef 00000002
+*        612 deadbeef 00000003
+*        613 deadbeef 00000001
+*        614 deadbeef 00000002
+*        615 deadbeef 00000002
+*        616 deadbeef 00000001
+*        617 deadbeef 00000002
+*        618 deadbeef 00000002
+*        619 deadbeef 00000002
+*        620 deadbeef 00000002
+*        621 deadbeef 00000002
+*        622 deadbeef 00000003
+*        623 deadbeef 00000002
+*        624 deadbeef 00000002
+*        625 deadbeef 00000002
+*        626 deadbeef 00000002
+*        627 deadbeef 00000002
+*        628 deadbeef 00000002
+*        629 deadbeef 00000002
+*        630 deadbeef 00000002
+*        631 deadbeef 00000003
+*        632 deadbeef 00000002
+*        633 deadbeef 00000002
+*        634 deadbeef 00000002
+*        635 deadbeef 00000002
+*        636 deadbeef 00000002
+*        637 deadbeef 00000002
+*        638 deadbeef 00000003
+*        639 deadbeef 00000002
+*        640 deadbeef 00000002
+*        641 deadbeef 00000002
+*        642 deadbeef 00000002
+*        643 deadbeef 00000002
+*        644 deadbeef 00000002
+*        645 deadbeef 00000002
+*        646 deadbeef 00000003
+*        647 deadbeef 00000001
+*        648 deadbeef 00000002
+*        649 deadbeef 00000001
+*        650 deadbeef 00000001
+*        651 deadbeef 00000002
+*        652 deadbeef 00000002
+*        653 deadbeef 00000001
+*        654 deadbeef 00000002
+*        655 deadbeef 00000001
+*        656 deadbeef 00000001
+*        657 deadbeef 00000002
+*        658 deadbeef 00000003
+*        659 deadbeef 00000001
+*        660 deadbeef 00000002
+*        661 deadbeef 00000001
+*        662 deadbeef 00000001
+*        663 deadbeef 00000003
+*        664 deadbeef 00000002
+*        665 deadbeef 00000001
+*        666 deadbeef 00000003
+*        667 deadbeef 00000002
+*        668 deadbeef 00000002
+*        669 deadbeef 00000003
+*        670 deadbeef 00000003
+*        671 deadbeef 00000001
+*        672 deadbeef 00000003
+*        673 deadbeef 00000001
+*        674 deadbeef 00000003
+*        675 deadbeef 00000003
+*        676 deadbeef 00000001
+*        677 deadbeef 00000002
+*        678 deadbeef 00000001
+*        679 deadbeef 00000001
+*        680 deadbeef 00000003
+*        681 deadbeef 00000003
+*        682 deadbeef 00000001
+*        683 deadbeef 00000003
+*        684 deadbeef 00000003
+*        685 deadbeef 00000003
+*        686 deadbeef 00000003
+*        687 deadbeef 00000001
+*        688 deadbeef 00000001
+*        689 deadbeef 00000003
+*        690 deadbeef 00000003
+*        691 deadbeef 00000003
+*        692 deadbeef 00000003
+*        693 deadbeef 00000002
+*        694 deadbeef 00000003
+*        695 deadbeef 00000002
+*        696 deadbeef 00000003
+*        697 deadbeef 00000001
+*        698 deadbeef 00000002
+*        699 deadbeef 00000001
+*        700 deadbeef 00000003
+*        701 deadbeef 00000002
+*        702 deadbeef 00000002
+*        703 deadbeef 00000002
+*        704 deadbeef 00000002
+*        705 deadbeef 00000003
+*        706 deadbeef 00000003
+*        707 deadbeef 00000002
+*        708 deadbeef 00000003
+*        709 deadbeef 00000003
+*        710 deadbeef 00000002
+*        711 deadbeef 00000002
+*        712 deadbeef 00000003
+*        713 deadbeef 00000003
+*        714 deadbeef 00000002
+*        715 deadbeef 00000001
+*        716 deadbeef 00000003
+*        717 deadbeef 00000002
+*        718 deadbeef 00000002
+*        719 deadbeef 00000002
+*        720 deadbeef 00000002
+*        721 deadbeef 00000002
+*        722 deadbeef 00000003
+*        723 deadbeef 00000002
+*        724 deadbeef 00000002
+*        725 deadbeef 00000001
+*        726 deadbeef 00000002
+         727 6f5ca309 6f5ca309
+</br></div></td>
         </tr></tbody>
         
-        <tbody class= "passed  results-table-row" >
+        <tbody class= "failed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/bne-01.S</td>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bne-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log">commit_id:b91f98f3a0e908bad4680c2e3901fbc24b63a563
 MACROS:
 TEST_CASE_1=True
-XLEN=32</br></div></td>
+XLEN=32
+File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bne-01.S/dut/DUT-venomcpu.signature
+File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/bne-01.S/ref/Reference-sail_c_simulator.signature
+Match  Line#    File1    File2
+*        287 deadbeef 00000003
+*        288 deadbeef 00000003
+*        289 deadbeef 00000001
+*        290 deadbeef 00000003
+*        291 deadbeef 00000001
+*        292 deadbeef 00000001
+*        293 deadbeef 00000001
+*        294 deadbeef 00000003
+*        295 deadbeef 00000001
+*        296 deadbeef 00000001
+*        297 deadbeef 00000003
+*        298 deadbeef 00000001
+*        299 deadbeef 00000001
+*        300 deadbeef 00000003
+*        301 deadbeef 00000003
+*        302 deadbeef 00000003
+*        303 deadbeef 00000001
+*        304 deadbeef 00000003
+*        305 deadbeef 00000003
+*        306 deadbeef 00000001
+*        307 deadbeef 00000002
+*        308 deadbeef 00000001
+*        309 deadbeef 00000001
+*        310 deadbeef 00000003
+*        311 deadbeef 00000003
+*        312 deadbeef 00000001
+*        313 deadbeef 00000001
+*        314 deadbeef 00000001
+*        315 deadbeef 00000003
+*        316 deadbeef 00000003
+*        317 deadbeef 00000003
+*        318 deadbeef 00000003
+*        319 deadbeef 00000001
+*        320 deadbeef 00000003
+*        321 deadbeef 00000003
+*        322 deadbeef 00000003
+*        323 deadbeef 00000003
+*        324 deadbeef 00000003
+*        325 deadbeef 00000001
+*        326 deadbeef 00000003
+*        327 deadbeef 00000001
+*        328 deadbeef 00000001
+*        329 deadbeef 00000003
+*        330 deadbeef 00000003
+*        331 deadbeef 00000003
+*        332 deadbeef 00000001
+*        333 deadbeef 00000003
+*        334 deadbeef 00000003
+*        335 deadbeef 00000001
+*        336 deadbeef 00000003
+*        337 deadbeef 00000003
+*        338 deadbeef 00000001
+*        339 deadbeef 00000003
+*        340 deadbeef 00000001
+*        341 deadbeef 00000003
+*        342 deadbeef 00000003
+*        343 deadbeef 00000001
+*        344 deadbeef 00000003
+*        345 deadbeef 00000003
+*        346 deadbeef 00000001
+*        347 deadbeef 00000001
+*        348 deadbeef 00000002
+*        349 deadbeef 00000003
+*        350 deadbeef 00000001
+*        351 deadbeef 00000003
+*        352 deadbeef 00000001
+*        353 deadbeef 00000003
+*        354 deadbeef 00000001
+*        355 deadbeef 00000001
+*        356 deadbeef 00000003
+*        357 deadbeef 00000003
+*        358 deadbeef 00000001
+*        359 deadbeef 00000001
+*        360 deadbeef 00000001
+*        361 deadbeef 00000001
+*        362 deadbeef 00000003
+*        363 deadbeef 00000003
+*        364 deadbeef 00000001
+*        365 deadbeef 00000001
+*        366 deadbeef 00000003
+*        367 deadbeef 00000001
+*        368 deadbeef 00000003
+*        369 deadbeef 00000001
+*        370 deadbeef 00000003
+*        371 deadbeef 00000002
+*        372 deadbeef 00000003
+*        373 deadbeef 00000003
+*        374 deadbeef 00000003
+*        375 deadbeef 00000003
+*        376 deadbeef 00000001
+*        377 deadbeef 00000003
+*        378 deadbeef 00000001
+*        379 deadbeef 00000003
+*        380 deadbeef 00000001
+*        381 deadbeef 00000001
+*        382 deadbeef 00000003
+*        383 deadbeef 00000003
+*        384 deadbeef 00000001
+*        385 deadbeef 00000003
+*        386 deadbeef 00000003
+*        387 deadbeef 00000003
+*        388 deadbeef 00000001
+*        389 deadbeef 00000003
+*        390 deadbeef 00000003
+*        391 deadbeef 00000003
+*        392 deadbeef 00000001
+*        393 deadbeef 00000003
+*        394 deadbeef 00000002
+*        395 deadbeef 00000001
+*        396 deadbeef 00000003
+*        397 deadbeef 00000003
+*        398 deadbeef 00000003
+*        399 deadbeef 00000001
+*        400 deadbeef 00000003
+*        401 deadbeef 00000003
+*        402 deadbeef 00000003
+*        403 deadbeef 00000001
+*        404 deadbeef 00000003
+*        405 deadbeef 00000003
+*        406 deadbeef 00000003
+*        407 deadbeef 00000003
+*        408 deadbeef 00000001
+*        409 deadbeef 00000001
+*        410 deadbeef 00000001
+*        411 deadbeef 00000003
+*        412 deadbeef 00000003
+*        413 deadbeef 00000003
+*        414 deadbeef 00000003
+*        415 deadbeef 00000003
+*        416 deadbeef 00000001
+*        417 deadbeef 00000002
+*        418 deadbeef 00000001
+*        419 deadbeef 00000001
+*        420 deadbeef 00000003
+*        421 deadbeef 00000003
+*        422 deadbeef 00000001
+*        423 deadbeef 00000003
+*        424 deadbeef 00000003
+*        425 deadbeef 00000003
+*        426 deadbeef 00000003
+*        427 deadbeef 00000003
+*        428 deadbeef 00000003
+*        429 deadbeef 00000001
+*        430 deadbeef 00000003
+*        431 deadbeef 00000001
+*        432 deadbeef 00000003
+*        433 deadbeef 00000003
+*        434 deadbeef 00000003
+*        435 deadbeef 00000003
+*        436 deadbeef 00000003
+*        437 deadbeef 00000001
+*        438 deadbeef 00000003
+*        439 deadbeef 00000001
+*        440 deadbeef 00000002
+*        441 deadbeef 00000003
+*        442 deadbeef 00000003
+*        443 deadbeef 00000002
+*        444 deadbeef 00000001
+*        445 deadbeef 00000003
+*        446 deadbeef 00000001
+*        447 deadbeef 00000001
+*        448 deadbeef 00000001
+*        449 deadbeef 00000001
+*        450 deadbeef 00000003
+*        451 deadbeef 00000001
+*        452 deadbeef 00000001
+*        453 deadbeef 00000003
+*        454 deadbeef 00000001
+*        455 deadbeef 00000003
+*        456 deadbeef 00000003
+*        457 deadbeef 00000003
+*        458 deadbeef 00000003
+*        459 deadbeef 00000001
+*        460 deadbeef 00000003
+*        461 deadbeef 00000001
+*        462 deadbeef 00000003
+*        463 deadbeef 00000001
+*        464 deadbeef 00000003
+*        465 deadbeef 00000001
+*        466 deadbeef 00000002
+*        467 deadbeef 00000001
+*        468 deadbeef 00000001
+*        469 deadbeef 00000003
+*        470 deadbeef 00000001
+*        471 deadbeef 00000001
+*        472 deadbeef 00000003
+*        473 deadbeef 00000003
+*        474 deadbeef 00000003
+*        475 deadbeef 00000001
+*        476 deadbeef 00000001
+*        477 deadbeef 00000003
+*        478 deadbeef 00000001
+*        479 deadbeef 00000003
+*        480 deadbeef 00000001
+*        481 deadbeef 00000003
+*        482 deadbeef 00000003
+*        483 deadbeef 00000001
+*        484 deadbeef 00000001
+*        485 deadbeef 00000001
+*        486 deadbeef 00000003
+*        487 deadbeef 00000003
+*        488 deadbeef 00000003
+*        489 deadbeef 00000002
+*        490 deadbeef 00000001
+*        491 deadbeef 00000003
+*        492 deadbeef 00000003
+*        493 deadbeef 00000001
+*        494 deadbeef 00000003
+*        495 deadbeef 00000003
+*        496 deadbeef 00000003
+*        497 deadbeef 00000003
+*        498 deadbeef 00000003
+*        499 deadbeef 00000003
+*        500 deadbeef 00000003
+*        501 deadbeef 00000003
+*        502 deadbeef 00000003
+*        503 deadbeef 00000003
+*        504 deadbeef 00000003
+*        505 deadbeef 00000003
+*        506 deadbeef 00000003
+*        507 deadbeef 00000001
+*        508 deadbeef 00000001
+*        509 deadbeef 00000003
+*        510 deadbeef 00000001
+*        511 deadbeef 00000001
+*        512 deadbeef 00000002
+*        513 deadbeef 00000001
+*        514 deadbeef 00000001
+*        515 deadbeef 00000003
+*        516 deadbeef 00000003
+*        517 deadbeef 00000003
+*        518 deadbeef 00000003
+*        519 deadbeef 00000001
+*        520 deadbeef 00000003
+*        521 deadbeef 00000001
+*        522 deadbeef 00000003
+*        523 deadbeef 00000001
+*        524 deadbeef 00000001
+*        525 deadbeef 00000001
+*        526 deadbeef 00000003
+*        527 deadbeef 00000001
+*        528 deadbeef 00000001
+*        529 deadbeef 00000001
+*        530 deadbeef 00000001
+*        531 deadbeef 00000001
+*        532 deadbeef 00000001
+*        533 deadbeef 00000003
+*        534 deadbeef 00000003
+*        535 deadbeef 00000002
+*        536 deadbeef 00000003
+*        537 deadbeef 00000003
+*        538 deadbeef 00000003
+*        539 deadbeef 00000003
+*        540 deadbeef 00000003
+*        541 deadbeef 00000003
+*        542 deadbeef 00000003
+*        543 deadbeef 00000003
+*        544 deadbeef 00000003
+*        545 deadbeef 00000003
+*        546 deadbeef 00000003
+*        547 deadbeef 00000003
+*        548 deadbeef 00000003
+*        549 deadbeef 00000003
+*        550 deadbeef 00000003
+*        551 deadbeef 00000001
+*        552 deadbeef 00000003
+*        553 deadbeef 00000003
+*        554 deadbeef 00000003
+*        555 deadbeef 00000001
+*        556 deadbeef 00000003
+*        557 deadbeef 00000003
+*        558 deadbeef 00000002
+*        559 deadbeef 00000003
+*        560 deadbeef 00000003
+*        561 deadbeef 00000001
+*        562 deadbeef 00000003
+*        563 deadbeef 00000001
+*        564 deadbeef 00000003
+*        565 deadbeef 00000003
+*        566 deadbeef 00000001
+*        567 deadbeef 00000003
+*        568 deadbeef 00000003
+*        569 deadbeef 00000003
+*        570 deadbeef 00000001
+*        571 deadbeef 00000003
+*        572 deadbeef 00000003
+*        573 deadbeef 00000001
+*        574 deadbeef 00000001
+*        575 deadbeef 00000003
+*        576 deadbeef 00000003
+*        577 deadbeef 00000001
+*        578 deadbeef 00000003
+*        579 deadbeef 00000001
+*        580 deadbeef 00000003
+*        581 deadbeef 00000002
+*        582 deadbeef 00000003
+*        583 deadbeef 00000003
+*        584 deadbeef 00000003
+         585 6f5ca309 6f5ca309
+</br></div></td>
         </tr></tbody>
         
         <tbody class= "passed  results-table-row" >
@@ -4929,17 +6932,77 @@ TEST_CASE_1=True
 XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "passed  results-table-row" >
+        <tbody class= "failed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/I/src/sltu-01.S</td>
-          <td class="col-result">Passed</td>
+          <td class="col-result">Failed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/sltu-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log">commit_id:b91f98f3a0e908bad4680c2e3901fbc24b63a563
 MACROS:
 TEST_CASE_1=True
-XLEN=32</br></div></td>
+XLEN=32
+File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/sltu-01.S/dut/DUT-venomcpu.signature
+File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/I/src/sltu-01.S/ref/Reference-sail_c_simulator.signature
+Match  Line#    File1    File2
+*        668 deadbeef 00000001
+*        669 deadbeef 00000001
+*        670 deadbeef 00000001
+*        671 deadbeef 00000001
+*        672 deadbeef 00000001
+*        673 deadbeef 00000001
+*        674 deadbeef 00000000
+*        675 deadbeef 00000001
+*        676 deadbeef 00000001
+*        677 deadbeef 00000001
+*        678 deadbeef 00000001
+*        679 deadbeef 00000001
+*        680 deadbeef 00000001
+*        681 deadbeef 00000001
+*        682 deadbeef 00000001
+*        683 deadbeef 00000001
+*        684 deadbeef 00000001
+*        685 deadbeef 00000001
+*        686 deadbeef 00000001
+*        687 deadbeef 00000001
+*        688 deadbeef 00000001
+*        689 deadbeef 00000001
+*        690 deadbeef 00000001
+*        691 deadbeef 00000000
+*        692 deadbeef 00000001
+*        693 deadbeef 00000001
+*        694 deadbeef 00000001
+*        695 deadbeef 00000001
+*        696 deadbeef 00000000
+*        697 deadbeef 00000000
+*        698 deadbeef 00000000
+*        699 deadbeef 00000000
+*        700 deadbeef 00000001
+*        701 deadbeef 00000001
+*        702 deadbeef 00000000
+*        703 deadbeef 00000001
+*        704 deadbeef 00000001
+*        705 deadbeef 00000000
+*        706 deadbeef 00000000
+*        707 deadbeef 00000001
+*        708 deadbeef 00000001
+*        709 deadbeef 00000000
+*        710 deadbeef 00000001
+*        711 deadbeef 00000001
+*        712 deadbeef 00000000
+*        713 deadbeef 00000000
+*        714 deadbeef 00000000
+*        715 deadbeef 00000000
+*        716 deadbeef 00000000
+*        717 deadbeef 00000001
+*        718 deadbeef 00000000
+*        719 deadbeef 00000001
+*        720 deadbeef 00000000
+*        721 deadbeef 00000000
+*        722 deadbeef 00000000
+         723 6f5ca309 6f5ca309
+</br></div></td>
         </tr></tbody>
         
         <tbody class= "passed  results-table-row" >
@@ -5332,10 +7395,10 @@ TEST_CASE_1=True
 XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/ebreak.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/ebreak.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5343,23 +7406,13 @@ XLEN=32</br></div></td>
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/ebreak.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/ebreak.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          1 deadbeef 00000000
-*          2 deadbeef 11111111
-*          3 ffffcc13 000008d3
-           4 00000003 00000003
-*          6 deadbeef 00000044
-           7 6f5ca309 6f5ca309
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/ecall.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/ecall.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5367,19 +7420,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/ecall.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/ecall.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          3 ffffcc13 000008d3
-           4 0000000b 0000000b
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-beq-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-beq-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5387,21 +7434,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-beq-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-beq-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          1 deadbeef 00000000
-           2 6f5ca309 6f5ca309
-*          3 ffffcc53 000008d3
-           4 00000000 00000000
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-bge-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bge-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5409,21 +7448,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bge-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bge-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          1 deadbeef 00000000
-           2 6f5ca309 6f5ca309
-*          3 fff47bd3 000008d3
-           4 00000000 00000000
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-bgeu-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bgeu-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5431,21 +7462,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bgeu-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bgeu-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          1 deadbeef 00000000
-           2 6f5ca309 6f5ca309
-*          3 ffff4c13 000008d3
-           4 00000000 00000000
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-blt-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-blt-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5453,21 +7476,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-blt-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-blt-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          1 deadbeef 00000000
-           2 6f5ca309 6f5ca309
-*          3 1fffcc13 000008d3
-           4 00000000 00000000
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-bltu-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bltu-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5475,21 +7490,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bltu-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bltu-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          1 deadbeef 00000000
-           2 6f5ca309 6f5ca309
-*          3 03ffcc13 000008d3
-           4 00000000 00000000
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-bne-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bne-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5497,19 +7504,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bne-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-bne-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          3 ffffcc93 000008d3
-           4 00000000 00000000
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-jal-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-jal-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5517,33 +7518,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-jal-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-jal-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          3 ffffa013 000008d3
-           4 00000000 00000000
-*          7 ffffa013 000008d3
-           8 00000000 00000000
-*         11 ffffa013 000008d3
-          12 00000002 00000002
-*         15 ffffa013 000008d3
-          16 00000002 00000002
-*         19 ffffa013 000008d3
-          20 00000000 00000000
-*         23 ffffa013 000008d3
-          24 00000002 00000002
-*         27 ffffa013 000008d3
-          28 00000002 00000002
-*         31 ffffa013 000008d3
-          32 00000002 00000002
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-lh-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lh-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5551,19 +7532,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lh-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lh-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          3 ffffcc13 000008d3
-           4 00000004 00000004
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-lhu-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lhu-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5571,19 +7546,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lhu-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lhu-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          3 ffffcc13 000008d3
-           4 00000004 00000004
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-lw-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lw-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5591,23 +7560,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lw-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-lw-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          5 ffffc413 000008d3
-           6 00000004 00000004
-*          9 ffffc413 000008d3
-          10 00000004 00000004
-*         13 ffffc413 000008d3
-          14 00000004 00000004
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-sh-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-sh-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5615,19 +7574,13 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-sh-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-sh-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          3 ffffcc13 000008d3
-           4 00000006 00000006
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign-sw-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-sw-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5635,17 +7588,7 @@ Match  Line#    File1    File2
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-sw-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign-sw-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          5 003fcc13 000008d3
-           6 00000006 00000006
-*          9 007fcc13 000008d3
-          10 00000006 00000006
-*         13 fff7cbf3 000008d3
-          14 00000006 00000006
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
         <tbody class= "passed  results-table-row" >
@@ -5661,10 +7604,10 @@ TEST_CASE_1=True
 XLEN=32</br></div></td>
         </tr></tbody>
         
-        <tbody class= "failed  results-table-row" >
+        <tbody class= "passed  results-table-row" >
         <tr>
           <td class="col-name">/mnt/c/Users/johnc/Downloads/SoftCPU/riscv-arch-test/riscv-test-suite/rv32i_m/privilege/src/misalign2-jalr-01.S</td>
-          <td class="col-result">Failed</td>
+          <td class="col-result">Passed</td>
           <td class="col-path">/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign2-jalr-01.S</td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -5672,13 +7615,7 @@ XLEN=32</br></div></td>
 MACROS:
 rvtest_mtrap_routine=True
 TEST_CASE_1=True
-XLEN=32
-File1 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign2-jalr-01.S/dut/DUT-venomcpu.signature
-File2 Path:/mnt/c/Users/johnc/Downloads/SoftCPU/riscof_work/privilege/src/misalign2-jalr-01.S/ref/Reference-sail_c_simulator.signature
-Match  Line#    File1    File2
-*          3 fffff013 000008d3
-           4 00000000 00000000
-</br></div></td>
+XLEN=32</br></div></td>
         </tr></tbody>
         
       </table>

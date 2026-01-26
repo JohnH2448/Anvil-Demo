@@ -42,8 +42,7 @@ module CSRFile (
                 csrs[MEPC] <= memoryWritebackPC;
                 csrs[MSTATUS][7] <= csrs[MSTATUS][3]; // MPIE <= MIE
                 csrs[MSTATUS][3] <= 1'b0; // MIE <= 0
-                $strobe("\n\nException: MEPC=%08h (actual=%08h) MCAUSE=%08h MTVEC=%08h MTVAL=%08h\n\n", 
-                        csrs[MEPC], memoryWritebackPC, csrs[MCAUSE], csrs[MTVEC], csrs[MTVAL]);
+                $strobe("Exception Detected");
             end else if (mretSignal) begin
                 csrs[MSTATUS][3] <= csrs[MSTATUS][7]; // MIE <= MPIE
                 csrs[MSTATUS][7] <= 1'b1; // MPIE <= 1
@@ -52,7 +51,7 @@ module CSRFile (
                     logic [31:0] old;
                     old = csrs[destinationCSR];
                     csrs[destinationCSR] <= csrWriteData;
-                    $display("CSR Write: CSR[%0d] <= %08h (old was %08h)", destinationCSR, csrWriteData, old);
+                    $display("CSR Write: CSR[%s] <= %08h (old was %08h)", destinationCSR.name(), csrWriteData, old);
                 end
                 if (!(csrDestinationEnable && (destinationCSR == MCYCLE))) begin
                     csrs[MCYCLE] <= csrs[MCYCLE] + 32'd1;
@@ -61,6 +60,15 @@ module CSRFile (
                     csrs[MINSTRET] <= csrs[MINSTRET] + 32'd1;
                 end
             end
+            csrs[MSTATUS][12:11] <= 2'b11;
+            csrs[MIP] <= 32'b0;
+            csrs[MIP][7] <= 1'b1;
+            $display("MEPC=%08h MCAUSE=%08h MTVAL=%08h MSTATUS=%08h MTVEC=%08h",
+                    csrs[MEPC],
+                    csrs[MCAUSE],
+                    csrs[MTVAL],
+                    csrs[MSTATUS],
+                    csrs[MTVEC]);
         end
     end
 endmodule

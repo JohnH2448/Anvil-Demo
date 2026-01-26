@@ -13,6 +13,9 @@ class VTop__Syms;
 class alignas(VL_CACHE_LINE_BYTES) VTop___024unit final : public VerilatedModule {
   public:
 
+    // DESIGN SPECIFIC STATE
+    static VlUnpacked<std::string, 16> __Venumtab_enum_name0;
+
     // INTERNAL VARIABLES
     VTop__Syms* const vlSymsp;
 

@@ -33,7 +33,7 @@ module Execute (
     logic illegal;
     logic branchValid;
 
-    assign gatedBranchValid = branchValid && !illegal && (decodeExecutePayload.trapPayload.trapType == NONE);
+    assign gatedBranchValid = branchValid && !illegal && (decodeExecutePayload.trapPayload.trapType == NONE) && !executeMemoryControl.stall;
 
     always_comb begin 
         illegal = 1'b0;
@@ -49,7 +49,7 @@ module Execute (
         brOp1 = forwardEnable1 ? forwardData1 : decodeExecutePayload.registerData1;
         brOp2 = forwardEnable2 ? forwardData2 : decodeExecutePayload.registerData2;
         csrOperand = decodeExecutePayload.decodeExecuteCSR.CSRSrc ? brOp1 : {27'd0, decodeExecutePayload.decodeExecuteCSR.CSRImmediate};
-        if (decodeExecutePayload.isMRET && decodeExecutePayload.valid && (decodeExecutePayload.trapPayload.trapType == NONE)) begin
+        if (decodeExecutePayload.isMRET && decodeExecutePayload.valid && (decodeExecutePayload.trapPayload.trapType == NONE) && !executeMemoryControl.stall) begin
             mretSignal = 1'd1;
             destinationCSR = MEPC;
             branchData = forwardCorrectedCSRReadData;
@@ -129,9 +129,9 @@ module Execute (
                     illegal = 1'b1;
                 end
             end
-            if (redirectAsserted) begin
-                branchValid = 1'd0;
-            end
+            // if (redirectAsserted) begin
+                // branchValid = 1'd0;
+            // end
         end else begin
             destinationCSR = decodeExecutePayload.decodeExecuteCSR.destinationCSR;
             unique case (decodeExecutePayload.decodeExecuteCSR.CSROp)

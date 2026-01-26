@@ -5,14 +5,6 @@
 #include "VTop__pch.h"
 #include "VTop_Top.h"
 
-VL_ATTR_COLD void VTop_Top___eval_static__TOP__Top(VTop_Top* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    VTop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+      VTop_Top___eval_static__TOP__Top\n"); );
-    // Body
-    vlSelf->__PVT__execute__DOT__redirectAsserted = 0U;
-}
-
 VL_ATTR_COLD void VTop_Top___eval_initial__TOP__Top(VTop_Top* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     VTop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -89,10 +81,8 @@ VL_ATTR_COLD void VTop_Top___ctor_var_reset(VTop_Top* vlSelf) {
         vlSelf->__PVT__registerFile__DOT__registers[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->__PVT__execute__DOT__result = VL_RAND_RESET_I(32);
-    vlSelf->__PVT__execute__DOT__redirectAsserted = VL_RAND_RESET_I(1);
     vlSelf->__PVT__execute__DOT__forwardCorrectedCSRReadData = VL_RAND_RESET_I(32);
     vlSelf->__PVT__execute__DOT__illegal = VL_RAND_RESET_I(1);
-    vlSelf->__PVT__execute__DOT__branchValid = VL_RAND_RESET_I(1);
     vlSelf->__PVT__memory__DOT__illegal = VL_RAND_RESET_I(1);
     vlSelf->__PVT__memory__DOT__accessFault = VL_RAND_RESET_I(1);
     vlSelf->__PVT__memory__DOT__storeReq = VL_RAND_RESET_I(1);

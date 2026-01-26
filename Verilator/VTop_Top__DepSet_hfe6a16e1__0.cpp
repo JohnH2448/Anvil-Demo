@@ -71,6 +71,8 @@ VL_INLINE_OPT void VTop_Top___ico_comb__TOP__Top__0(VTop_Top* vlSelf) {
     __PVT__execute__DOT__csrOperand = 0;
     IData/*31:0*/ __PVT__execute__DOT__tempResult;
     __PVT__execute__DOT__tempResult = 0;
+    CData/*0:0*/ __PVT__execute__DOT__branchValid;
+    __PVT__execute__DOT__branchValid = 0;
     // Body
     vlSelf->__PVT__stallControl = ((1U & ((vlSelf->__PVT__executeMemoryPayload[1U] 
                                            >> 7U) & 
@@ -85,8 +87,9 @@ VL_INLINE_OPT void VTop_Top___ico_comb__TOP__Top__0(VTop_Top* vlSelf) {
                                           & (IData)(vlSelf->__PVT__storeValid))));
     vlSelf->__PVT__memoryWritebackControl = 0U;
     vlSelf->__PVT__executeMemoryControl = 0U;
+    vlSelf->__PVT__mretSignal = 0U;
     vlSelf->__PVT__execute__DOT__illegal = 0U;
-    vlSelf->__PVT__execute__DOT__branchValid = 0U;
+    __PVT__execute__DOT__branchValid = 0U;
     vlSelf->__PVT__readCSR = 0U;
     __PVT__execute__DOT__tempResult = 0U;
     __PVT__execute__DOT__operand1 = 0U;
@@ -129,8 +132,11 @@ VL_INLINE_OPT void VTop_Top___ico_comb__TOP__Top__0(VTop_Top* vlSelf) {
                                                    | (IData)(vlSelf->__PVT__executeMemoryControl));
         }
     }
-    if ((vlSelf->__PVT__decodeExecutePayload[0U] & 
-         (0x20U == (0x3eU & vlSelf->__PVT__decodeExecutePayload[1U])))) {
+    if (((vlSelf->__PVT__decodeExecutePayload[0U] & 
+          (0x20U == (0x3eU & vlSelf->__PVT__decodeExecutePayload[1U]))) 
+         & (~ ((IData)(vlSelf->__PVT__executeMemoryControl) 
+               >> 1U)))) {
+        vlSelf->__PVT__mretSignal = 1U;
         vlSelf->__PVT__readCSR = 1U;
         vlSelf->__PVT__branchData = vlSelf->__PVT__execute__DOT__forwardCorrectedCSRReadData;
     } else if ((0U == (3U & (vlSelf->__PVT__decodeExecutePayload[1U] 
@@ -249,40 +255,40 @@ VL_INLINE_OPT void VTop_Top___ico_comb__TOP__Top__0(VTop_Top* vlSelf) {
                 if ((0x20000000U & vlSelf->__PVT__decodeExecutePayload[1U])) {
                     if ((1U & (~ (vlSelf->__PVT__decodeExecutePayload[1U] 
                                   >> 0x1cU)))) {
-                        vlSelf->__PVT__execute__DOT__branchValid 
+                        __PVT__execute__DOT__branchValid 
                             = (__PVT__execute__DOT__brOp1 
                                >= __PVT__execute__DOT__brOp2);
                     }
                 } else {
-                    vlSelf->__PVT__execute__DOT__branchValid 
+                    __PVT__execute__DOT__branchValid 
                         = ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])
                             ? (__PVT__execute__DOT__brOp1 
                                < __PVT__execute__DOT__brOp2)
                             : VL_GTES_III(32, __PVT__execute__DOT__brOp1, __PVT__execute__DOT__brOp2));
                 }
             } else if ((0x20000000U & vlSelf->__PVT__decodeExecutePayload[1U])) {
-                vlSelf->__PVT__execute__DOT__branchValid 
-                    = ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])
-                        ? VL_LTS_III(32, __PVT__execute__DOT__brOp1, __PVT__execute__DOT__brOp2)
-                        : (__PVT__execute__DOT__brOp1 
-                           != __PVT__execute__DOT__brOp2));
+                __PVT__execute__DOT__branchValid = 
+                    ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])
+                      ? VL_LTS_III(32, __PVT__execute__DOT__brOp1, __PVT__execute__DOT__brOp2)
+                      : (__PVT__execute__DOT__brOp1 
+                         != __PVT__execute__DOT__brOp2));
             } else if ((0x10000000U & vlSelf->__PVT__decodeExecutePayload[1U])) {
-                vlSelf->__PVT__execute__DOT__branchValid 
-                    = (__PVT__execute__DOT__brOp1 == __PVT__execute__DOT__brOp2);
+                __PVT__execute__DOT__branchValid = 
+                    (__PVT__execute__DOT__brOp1 == __PVT__execute__DOT__brOp2);
             }
             if ((1U == (3U & (vlSelf->__PVT__decodeExecutePayload[1U] 
                               >> 0x16U)))) {
-                vlSelf->__PVT__execute__DOT__branchValid = 1U;
+                __PVT__execute__DOT__branchValid = 1U;
             } else if ((2U == (3U & (vlSelf->__PVT__decodeExecutePayload[1U] 
                                      >> 0x16U)))) {
-                vlSelf->__PVT__execute__DOT__branchValid = 1U;
+                __PVT__execute__DOT__branchValid = 1U;
             }
         } else {
-            vlSelf->__PVT__execute__DOT__branchValid = 0U;
+            __PVT__execute__DOT__branchValid = 0U;
         }
         if ((((vlSelf->__PVT__decodeExecutePayload[0U] 
                & (0U == (0x1eU & vlSelf->__PVT__decodeExecutePayload[1U]))) 
-              & (IData)(vlSelf->__PVT__execute__DOT__branchValid)) 
+              & (IData)(__PVT__execute__DOT__branchValid)) 
              & (0U != (0x70c00000U & vlSelf->__PVT__decodeExecutePayload[1U])))) {
             vlSelf->__PVT__branchData = ((2U == (3U 
                                                  & (vlSelf->__PVT__decodeExecutePayload[1U] 
@@ -293,9 +299,6 @@ VL_INLINE_OPT void VTop_Top___ico_comb__TOP__Top__0(VTop_Top* vlSelf) {
             if ((0U != (3U & vlSelf->__PVT__branchData))) {
                 vlSelf->__PVT__execute__DOT__illegal = 1U;
             }
-        }
-        if (vlSelf->__PVT__execute__DOT__redirectAsserted) {
-            vlSelf->__PVT__execute__DOT__branchValid = 0U;
         }
     } else {
         vlSelf->__PVT__readCSR = (0xfU & (vlSelf->__PVT__decodeExecutePayload[1U] 
@@ -368,10 +371,15 @@ VL_INLINE_OPT void VTop_Top___ico_comb__TOP__Top__0(VTop_Top* vlSelf) {
                                                    | vlSelf->__PVT__execute__DOT__result);
         }
     }
-    vlSelf->__PVT__branchValid = ((IData)(vlSelf->__PVT__execute__DOT__branchValid) 
+    vlSelf->__PVT__branchValid = ((IData)(__PVT__execute__DOT__branchValid) 
                                   & ((~ (IData)(vlSelf->__PVT__execute__DOT__illegal)) 
-                                     & (0U == (0x1eU 
-                                               & vlSelf->__PVT__decodeExecutePayload[1U]))));
+                                     & (IData)(((~ 
+                                                 ((IData)(vlSelf->__PVT__executeMemoryControl) 
+                                                  >> 1U)) 
+                                                & (0U 
+                                                   == 
+                                                   (0x1eU 
+                                                    & vlSelf->__PVT__decodeExecutePayload[1U]))))));
     vlSelf->__PVT__fetchDecodeControl = 0U;
     vlSelf->__PVT__decodeExecuteControl = 0U;
     if ((1U & (~ (IData)(vlSymsp->TOP.reset)))) {
@@ -571,6 +579,13 @@ VL_INLINE_OPT void VTop_Top___act_sequent__TOP__Top__1(VTop_Top* vlSelf) {
                                                    | (IData)(vlSelf->__PVT__executeMemoryControl));
         }
     }
+    vlSelf->__PVT__mretSignal = 0U;
+    if (((vlSelf->__PVT__decodeExecutePayload[0U] & 
+          (0x20U == (0x3eU & vlSelf->__PVT__decodeExecutePayload[1U]))) 
+         & (~ ((IData)(vlSelf->__PVT__executeMemoryControl) 
+               >> 1U)))) {
+        vlSelf->__PVT__mretSignal = 1U;
+    }
 }
 
 VL_INLINE_OPT void VTop_Top___act_comb__TOP__Top__2(VTop_Top* vlSelf) {
@@ -678,17 +693,21 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__0(VTop_Top* vlSelf) {
     __Vdlyvval__csrFile__DOT__csrs__v27 = 0;
     CData/*0:0*/ __Vdlyvset__csrFile__DOT__csrs__v27;
     __Vdlyvset__csrFile__DOT__csrs__v27 = 0;
+    CData/*4:0*/ __Vdlyvlsb__csrFile__DOT__csrs__v28;
+    __Vdlyvlsb__csrFile__DOT__csrs__v28 = 0;
+    CData/*0:0*/ __Vdlyvset__csrFile__DOT__csrs__v28;
+    __Vdlyvset__csrFile__DOT__csrs__v28 = 0;
+    CData/*4:0*/ __Vdlyvlsb__csrFile__DOT__csrs__v30;
+    __Vdlyvlsb__csrFile__DOT__csrs__v30 = 0;
     CData/*4:0*/ __Vdlyvdim0__registerFile__DOT__registers__v0;
     __Vdlyvdim0__registerFile__DOT__registers__v0 = 0;
     IData/*31:0*/ __Vdlyvval__registerFile__DOT__registers__v0;
     __Vdlyvval__registerFile__DOT__registers__v0 = 0;
     CData/*0:0*/ __Vdlyvset__registerFile__DOT__registers__v0;
     __Vdlyvset__registerFile__DOT__registers__v0 = 0;
-    CData/*0:0*/ __Vdly__execute__DOT__redirectAsserted;
-    __Vdly__execute__DOT__redirectAsserted = 0;
+    std::string __Vtemp_1;
     // Body
     vlSelf->__Vdly__fetch__DOT__programCounter = vlSelf->__PVT__fetch__DOT__programCounter;
-    __Vdly__execute__DOT__redirectAsserted = vlSelf->__PVT__execute__DOT__redirectAsserted;
     __Vdlyvset__registerFile__DOT__registers__v0 = 0U;
     __Vdlyvset__csrFile__DOT__csrs__v0 = 0U;
     __Vdlyvset__csrFile__DOT__csrs__v18 = 0U;
@@ -697,6 +716,7 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__0(VTop_Top* vlSelf) {
     __Vdlyvset__csrFile__DOT__csrs__v25 = 0U;
     __Vdlyvset__csrFile__DOT__csrs__v26 = 0U;
     __Vdlyvset__csrFile__DOT__csrs__v27 = 0U;
+    __Vdlyvset__csrFile__DOT__csrs__v28 = 0U;
     vlSelf->__Vdly__storeValid = vlSelf->__PVT__storeValid;
     if (vlSelf->__PVT__destinationEnable) {
         if ((0U != (0x1fU & (vlSelf->__PVT__memoryWritebackPayload[3U] 
@@ -711,32 +731,20 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__0(VTop_Top* vlSelf) {
     }
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__fetch__DOT__programCounter = 0U;
-        __Vdly__execute__DOT__redirectAsserted = 0U;
-    } else {
-        if (vlSelf->__PVT__controlReset) {
+    } else if (vlSelf->__PVT__controlReset) {
+        vlSelf->__Vdly__fetch__DOT__programCounter 
+            = vlSelf->__PVT__csrFile__DOT__csrs[6U];
+    } else if (vlSelf->__PVT__mretSignal) {
+        vlSelf->__Vdly__fetch__DOT__programCounter 
+            = vlSelf->__PVT__branchData;
+    } else if (vlSelf->__PVT__branchValid) {
+        vlSelf->__Vdly__fetch__DOT__programCounter 
+            = vlSelf->__PVT__branchData;
+    } else if ((1U & (~ ((IData)(vlSelf->__PVT__fetchDecodeControl) 
+                         >> 1U)))) {
+        if (vlSymsp->TOP__Top__mem_inst.__PVT__i_valid) {
             vlSelf->__Vdly__fetch__DOT__programCounter 
-                = vlSelf->__PVT__csrFile__DOT__csrs
-                [6U];
-        } else if (vlSelf->__PVT__mretSignal) {
-            vlSelf->__Vdly__fetch__DOT__programCounter 
-                = vlSelf->__PVT__branchData;
-        } else if (vlSelf->__PVT__branchValid) {
-            vlSelf->__Vdly__fetch__DOT__programCounter 
-                = vlSelf->__PVT__branchData;
-        } else if ((1U & (~ ((IData)(vlSelf->__PVT__fetchDecodeControl) 
-                             >> 1U)))) {
-            if (vlSymsp->TOP__Top__mem_inst.__PVT__i_valid) {
-                vlSelf->__Vdly__fetch__DOT__programCounter 
-                    = ((IData)(4U) + vlSelf->__PVT__fetch__DOT__programCounter);
-            }
-        }
-        if ((((IData)(vlSelf->__PVT__execute__DOT__branchValid) 
-              & ((IData)(vlSelf->__PVT__executeMemoryControl) 
-                 >> 1U)) & (~ (IData)(vlSelf->__PVT__execute__DOT__redirectAsserted)))) {
-            __Vdly__execute__DOT__redirectAsserted = 1U;
-        }
-        if ((IData)((2U != (IData)(vlSelf->__PVT__executeMemoryControl)))) {
-            __Vdly__execute__DOT__redirectAsserted = 0U;
+                = ((IData)(4U) + vlSelf->__PVT__fetch__DOT__programCounter);
         }
     }
     if ((1U & (~ (IData)(vlSymsp->TOP.reset)))) {
@@ -759,75 +767,84 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__0(VTop_Top* vlSelf) {
             }
         }
     }
-    if (vlSymsp->TOP.reset) {
+    if (VL_LIKELY(vlSymsp->TOP.reset)) {
         __Vdlyvset__csrFile__DOT__csrs__v0 = 1U;
-    } else if (vlSelf->__PVT__controlReset) {
-        __Vdlyvval__csrFile__DOT__csrs__v18 = vlSelf->__PVT__mtval;
-        __Vdlyvset__csrFile__DOT__csrs__v18 = 1U;
-        vlSelf->csrFile__DOT____Vstrobe0 = 1U;
-        __Vdlyvval__csrFile__DOT__csrs__v19 = vlSelf->__PVT__mcause;
-        __Vdlyvset__csrFile__DOT__csrs__v19 = 1U;
-        __Vdlyvval__csrFile__DOT__csrs__v20 = ((vlSelf->__PVT__memoryWritebackPayload[4U] 
-                                                << 0xeU) 
-                                               | (vlSelf->__PVT__memoryWritebackPayload[3U] 
-                                                  >> 0x12U));
-        __Vdlyvval__csrFile__DOT__csrs__v21 = (1U & 
-                                               (vlSelf->__PVT__csrFile__DOT__csrs
-                                                [0U] 
-                                                >> 3U));
-        __Vdlyvlsb__csrFile__DOT__csrs__v21 = 7U;
-        __Vdlyvlsb__csrFile__DOT__csrs__v22 = 3U;
-    } else if (vlSelf->__PVT__mretSignal) {
-        __Vdlyvval__csrFile__DOT__csrs__v23 = (1U & 
-                                               (vlSelf->__PVT__csrFile__DOT__csrs
-                                                [0U] 
-                                                >> 7U));
-        __Vdlyvset__csrFile__DOT__csrs__v23 = 1U;
-        __Vdlyvlsb__csrFile__DOT__csrs__v23 = 3U;
-        __Vdlyvlsb__csrFile__DOT__csrs__v24 = 7U;
     } else {
-        if (VL_UNLIKELY(vlSelf->__PVT__csrDestinationEnable)) {
-            vlSelf->__PVT__csrFile__DOT__unnamedblk1__DOT__old 
-                = vlSelf->__PVT__csrFile__DOT__csrs
-                [(0xfU & (vlSelf->__PVT__memoryWritebackPayload[1U] 
-                          >> 3U))];
-            __Vdlyvval__csrFile__DOT__csrs__v25 = (
-                                                   (vlSelf->__PVT__memoryWritebackPayload[3U] 
-                                                    << 0x13U) 
-                                                   | (vlSelf->__PVT__memoryWritebackPayload[2U] 
-                                                      >> 0xdU));
-            __Vdlyvset__csrFile__DOT__csrs__v25 = 1U;
-            __Vdlyvdim0__csrFile__DOT__csrs__v25 = 
-                (0xfU & (vlSelf->__PVT__memoryWritebackPayload[1U] 
-                         >> 3U));
-            VL_WRITEF("CSR Write: CSR[%0#] <= %08x (old was %08x)\n",
-                      4,(0xfU & (vlSelf->__PVT__memoryWritebackPayload[1U] 
-                                 >> 3U)),32,((vlSelf->__PVT__memoryWritebackPayload[3U] 
-                                              << 0x13U) 
-                                             | (vlSelf->__PVT__memoryWritebackPayload[2U] 
-                                                >> 0xdU)),
-                      32,vlSelf->__PVT__csrFile__DOT__unnamedblk1__DOT__old);
+        if (vlSelf->__PVT__controlReset) {
+            __Vdlyvval__csrFile__DOT__csrs__v18 = vlSelf->__PVT__mtval;
+            __Vdlyvset__csrFile__DOT__csrs__v18 = 1U;
+            vlSelf->csrFile__DOT____Vstrobe0 = 1U;
+            __Vdlyvval__csrFile__DOT__csrs__v19 = vlSelf->__PVT__mcause;
+            __Vdlyvset__csrFile__DOT__csrs__v19 = 1U;
+            __Vdlyvval__csrFile__DOT__csrs__v20 = (
+                                                   (vlSelf->__PVT__memoryWritebackPayload[4U] 
+                                                    << 0xeU) 
+                                                   | (vlSelf->__PVT__memoryWritebackPayload[3U] 
+                                                      >> 0x12U));
+            __Vdlyvval__csrFile__DOT__csrs__v21 = (1U 
+                                                   & (vlSelf->__PVT__csrFile__DOT__csrs
+                                                      [0U] 
+                                                      >> 3U));
+            __Vdlyvlsb__csrFile__DOT__csrs__v21 = 7U;
+            __Vdlyvlsb__csrFile__DOT__csrs__v22 = 3U;
+        } else if (vlSelf->__PVT__mretSignal) {
+            __Vdlyvval__csrFile__DOT__csrs__v23 = (1U 
+                                                   & (vlSelf->__PVT__csrFile__DOT__csrs
+                                                      [0U] 
+                                                      >> 7U));
+            __Vdlyvset__csrFile__DOT__csrs__v23 = 1U;
+            __Vdlyvlsb__csrFile__DOT__csrs__v23 = 3U;
+            __Vdlyvlsb__csrFile__DOT__csrs__v24 = 7U;
+        } else {
+            if (VL_UNLIKELY(vlSelf->__PVT__csrDestinationEnable)) {
+                vlSelf->__PVT__csrFile__DOT__unnamedblk1__DOT__old 
+                    = vlSelf->__PVT__csrFile__DOT__csrs
+                    [(0xfU & (vlSelf->__PVT__memoryWritebackPayload[1U] 
+                              >> 3U))];
+                __Vdlyvval__csrFile__DOT__csrs__v25 
+                    = ((vlSelf->__PVT__memoryWritebackPayload[3U] 
+                        << 0x13U) | (vlSelf->__PVT__memoryWritebackPayload[2U] 
+                                     >> 0xdU));
+                __Vdlyvset__csrFile__DOT__csrs__v25 = 1U;
+                __Vdlyvdim0__csrFile__DOT__csrs__v25 
+                    = (0xfU & (vlSelf->__PVT__memoryWritebackPayload[1U] 
+                               >> 3U));
+                __Vtemp_1 = VTop___024unit::__Venumtab_enum_name0
+                    [(0xfU & (vlSelf->__PVT__memoryWritebackPayload[1U] 
+                              >> 3U))];
+                VL_WRITEF("CSR Write: CSR[%@] <= %08x (old was %08x)\n",
+                          -1,&(__Vtemp_1),32,((vlSelf->__PVT__memoryWritebackPayload[3U] 
+                                               << 0x13U) 
+                                              | (vlSelf->__PVT__memoryWritebackPayload[2U] 
+                                                 >> 0xdU)),
+                          32,vlSelf->__PVT__csrFile__DOT__unnamedblk1__DOT__old);
+            }
+            if ((1U & (~ ((IData)(vlSelf->__PVT__csrDestinationEnable) 
+                          & (0x70U == (0x78U & vlSelf->__PVT__memoryWritebackPayload[1U])))))) {
+                __Vdlyvval__csrFile__DOT__csrs__v26 
+                    = ((IData)(1U) + vlSelf->__PVT__csrFile__DOT__csrs
+                       [0xeU]);
+                __Vdlyvset__csrFile__DOT__csrs__v26 = 1U;
+            }
+            if (((IData)(vlSelf->__PVT__dualValid) 
+                 & (~ ((IData)(vlSelf->__PVT__csrDestinationEnable) 
+                       & (0x78U == (0x78U & vlSelf->__PVT__memoryWritebackPayload[1U])))))) {
+                __Vdlyvval__csrFile__DOT__csrs__v27 
+                    = ((IData)(1U) + vlSelf->__PVT__csrFile__DOT__csrs
+                       [0xfU]);
+                __Vdlyvset__csrFile__DOT__csrs__v27 = 1U;
+            }
         }
-        if ((1U & (~ ((IData)(vlSelf->__PVT__csrDestinationEnable) 
-                      & (0x70U == (0x78U & vlSelf->__PVT__memoryWritebackPayload[1U])))))) {
-            __Vdlyvval__csrFile__DOT__csrs__v26 = ((IData)(1U) 
-                                                   + 
-                                                   vlSelf->__PVT__csrFile__DOT__csrs
-                                                   [0xeU]);
-            __Vdlyvset__csrFile__DOT__csrs__v26 = 1U;
-        }
-        if (((IData)(vlSelf->__PVT__dualValid) & (~ 
-                                                  ((IData)(vlSelf->__PVT__csrDestinationEnable) 
-                                                   & (0x78U 
-                                                      == 
-                                                      (0x78U 
-                                                       & vlSelf->__PVT__memoryWritebackPayload[1U])))))) {
-            __Vdlyvval__csrFile__DOT__csrs__v27 = ((IData)(1U) 
-                                                   + 
-                                                   vlSelf->__PVT__csrFile__DOT__csrs
-                                                   [0xfU]);
-            __Vdlyvset__csrFile__DOT__csrs__v27 = 1U;
-        }
+        __Vdlyvset__csrFile__DOT__csrs__v28 = 1U;
+        __Vdlyvlsb__csrFile__DOT__csrs__v28 = 0xbU;
+        __Vdlyvlsb__csrFile__DOT__csrs__v30 = 7U;
+        VL_WRITEF("MEPC=%08x MCAUSE=%08x MTVAL=%08x MSTATUS=%08x MTVEC=%08x\n",
+                  32,vlSelf->__PVT__csrFile__DOT__csrs
+                  [1U],32,vlSelf->__PVT__csrFile__DOT__csrs
+                  [2U],32,vlSelf->__PVT__csrFile__DOT__csrs
+                  [3U],32,vlSelf->__PVT__csrFile__DOT__csrs
+                  [0U],32,vlSelf->__PVT__csrFile__DOT__csrs
+                  [6U]);
     }
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__storeValid = 0U;
@@ -837,11 +854,14 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__0(VTop_Top* vlSelf) {
         vlSelf->__PVT__memoryWritebackPayload[3U] = 0U;
         vlSelf->__PVT__memoryWritebackPayload[4U] = 0U;
     } else {
-        if ((((((~ (IData)(vlSelf->__PVT__storeValid)) 
-                & (~ (IData)(vlSelf->__PVT__memory__DOT__illegal))) 
-               & (~ (IData)(vlSelf->__PVT__memory__DOT__accessFault))) 
-              & (~ (IData)(vlSelf->__PVT__memoryWritebackControl))) 
-             & (0U == (0xf00U & vlSelf->__PVT__memoryWritebackPayload[2U])))) {
+        if ((1U & (((((~ (IData)(vlSelf->__PVT__storeValid)) 
+                      & (~ (IData)(vlSelf->__PVT__memory__DOT__illegal))) 
+                     & (~ (IData)(vlSelf->__PVT__memory__DOT__accessFault))) 
+                    & (~ (IData)(vlSelf->__PVT__memoryWritebackControl))) 
+                   & (~ ((vlSelf->__PVT__memoryWritebackPayload[1U] 
+                          >> 7U) & (0U != (0xfU & (
+                                                   vlSelf->__PVT__memoryWritebackPayload[2U] 
+                                                   >> 8U)))))))) {
             vlSelf->__Vdly__storeValid = vlSelf->__PVT__memory__DOT__storeReq;
         } else if (vlSymsp->TOP__Top__mem_inst.__PVT__storeComplete) {
             vlSelf->__Vdly__storeValid = 0U;
@@ -1212,7 +1232,6 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__0(VTop_Top* vlSelf) {
             }
         }
     }
-    vlSelf->__PVT__execute__DOT__redirectAsserted = __Vdly__execute__DOT__redirectAsserted;
     if (__Vdlyvset__registerFile__DOT__registers__v0) {
         vlSelf->__PVT__registerFile__DOT__registers[__Vdlyvdim0__registerFile__DOT__registers__v0] 
             = __Vdlyvval__registerFile__DOT__registers__v0;
@@ -1281,6 +1300,20 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__0(VTop_Top* vlSelf) {
     }
     if (__Vdlyvset__csrFile__DOT__csrs__v27) {
         vlSelf->__PVT__csrFile__DOT__csrs[0xfU] = __Vdlyvval__csrFile__DOT__csrs__v27;
+    }
+    if (__Vdlyvset__csrFile__DOT__csrs__v28) {
+        vlSelf->__PVT__csrFile__DOT__csrs[0U] = (vlSelf->__PVT__csrFile__DOT__csrs
+                                                 [0U] 
+                                                 | (0xffffffffULL 
+                                                    & ((IData)(3U) 
+                                                       << (IData)(__Vdlyvlsb__csrFile__DOT__csrs__v28))));
+        vlSelf->__PVT__csrFile__DOT__csrs[0xdU] = 0U;
+        vlSelf->__PVT__csrFile__DOT__csrs[0xdU] = (
+                                                   vlSelf->__PVT__csrFile__DOT__csrs
+                                                   [0xdU] 
+                                                   | (0xffffffffULL 
+                                                      & ((IData)(1U) 
+                                                         << (IData)(__Vdlyvlsb__csrFile__DOT__csrs__v30))));
     }
     vlSelf->__PVT__debug_regs_flat[0U] = vlSelf->__PVT__registerFile__DOT__registers
         [0U];
@@ -1900,6 +1933,25 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__1(VTop_Top* vlSelf) {
                         = ((0xfffffffeU & vlSelf->__PVT__decodeExecutePayload[1U]) 
                            | (1U & (vlSelf->__PVT__fetchDecodePayload[3U] 
                                     >> 4U)));
+                } else if ((5U == (0xfU & (vlSelf->__PVT__decode__DOT__decodeExecuteCandidate[1U] 
+                                           >> 1U)))) {
+                    vlSelf->__PVT__decodeExecutePayload[0U] 
+                        = (1U & vlSelf->__PVT__decodeExecutePayload[0U]);
+                    vlSelf->__PVT__decodeExecutePayload[1U] 
+                        = (0xfffffffeU & vlSelf->__PVT__decodeExecutePayload[1U]);
+                } else if ((6U == (0xfU & (vlSelf->__PVT__decode__DOT__decodeExecuteCandidate[1U] 
+                                           >> 1U)))) {
+                    vlSelf->__PVT__decodeExecutePayload[0U] 
+                        = ((1U & vlSelf->__PVT__decodeExecutePayload[0U]) 
+                           | (0xfffffffeU & ((vlSelf->__PVT__fetchDecodePayload[2U] 
+                                              << 0x1cU) 
+                                             | (0xffffffeU 
+                                                & (vlSelf->__PVT__fetchDecodePayload[1U] 
+                                                   >> 4U)))));
+                    vlSelf->__PVT__decodeExecutePayload[1U] 
+                        = ((0xfffffffeU & vlSelf->__PVT__decodeExecutePayload[1U]) 
+                           | (1U & (vlSelf->__PVT__fetchDecodePayload[2U] 
+                                    >> 4U)));
                 }
             } else if ((1U & vlSelf->__PVT__fetchDecodePayload[0U])) {
                 vlSelf->__PVT__decodeExecutePayload[0U] 
@@ -2004,11 +2056,6 @@ VL_INLINE_OPT void VTop_Top___nba_sequent__TOP__Top__1(VTop_Top* vlSelf) {
         vlSelf->__PVT__fetchDecodePayload[1U] = 0U;
         vlSelf->__PVT__fetchDecodePayload[2U] = 0U;
         vlSelf->__PVT__fetchDecodePayload[3U] = 0U;
-    }
-    vlSelf->__PVT__mretSignal = 0U;
-    if ((vlSelf->__PVT__decodeExecutePayload[0U] & 
-         (0x20U == (0x3eU & vlSelf->__PVT__decodeExecutePayload[1U])))) {
-        vlSelf->__PVT__mretSignal = 1U;
     }
     vlSelf->__PVT__csrForwardData = 0U;
     vlSelf->__PVT__csrForwardEnable = 0U;

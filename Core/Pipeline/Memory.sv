@@ -121,12 +121,13 @@ module Memory (
     always_ff @(posedge clock) begin
         if (reset) begin
             storeValid <= 1'b0;
-        end else if (!storeValid && !illegal && !accessFault && !memoryWritebackControl.flush && (memoryWritebackPayload.trapPayload.trapType == NONE)) begin
+        end else if (!storeValid && !illegal && !accessFault && !memoryWritebackControl.flush && !(memoryWritebackPayload.valid && (memoryWritebackPayload.trapPayload.trapType != NONE))) begin
             storeValid <= storeReq;
         end else if (storeComplete) begin
             storeValid <= 1'b0;
         end
     end
+    // end else if (!storeValid && !illegal && !accessFault && !memoryWritebackControl.flush && !(memoryWritebackPayload.valid && (memoryWritebackPayload.trapPayload.trapType != NONE))) begin
 
     always_ff @(posedge clock) begin
         if (reset) begin

@@ -304,6 +304,10 @@ module Decode (
                 decodeExecutePayload.valid <= fetchDecodePayload.valid;
                 if (decodeExecuteCandidate.trapPayload.trapType == ILLEGAL) begin
                     decodeExecutePayload.trapPayload.faultingAddress <= fetchDecodePayload.instruction;
+                end else if (decodeExecuteCandidate.trapPayload.trapType == ECALL) begin
+                    decodeExecutePayload.trapPayload.faultingAddress <= '0;
+                end else if (decodeExecuteCandidate.trapPayload.trapType == EBREAK) begin
+                    decodeExecutePayload.trapPayload.faultingAddress <= fetchDecodePayload.programCounter;
                 end
             end else if (fetchDecodePayload.valid) begin
                 decodeExecutePayload <= decodeExecuteCandidate;
@@ -314,5 +318,6 @@ module Decode (
             end
         end
     end
+
 
 endmodule
