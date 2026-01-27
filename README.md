@@ -3,7 +3,7 @@
 
 - RISC-V RV32I Zicsr ISA
 - In-Order 5-Stage Pipeline
-- 76 Test RISCOF Verified 
+- 76 Test RISCOF Verication Suite 
 - Decoupled Memory For External RAM
 - Hardwired M-Mode Execution
 
