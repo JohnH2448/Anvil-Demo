@@ -6,13 +6,13 @@ VenomCPU is a RISC-V CPU core implementing the RV32I base ISA with Zicsr support
 ## Features
 
 - RISC-V RV32I Zicsr ISA
-- In-Order 5-Stage Pipeline
 - Verified Against Privileged RISCOF Test Suite
-- Decoupled Memory For External RAM
+- In-Order 5-Stage Pipeline
+- Decoupled Memory Interface for External RAM
 - Hardwired M-Mode Execution
 
 ## Simulator
-This SystemVerilog core comes with a corresponding simulator to more easily observe and test behavior. The simulation tool used is Verilator, which compiles HDL to native binaries. Verilator takes two input catagories, HDL and a C++ test harness. The simulator included here is already compiled with a fixed test harness. To run the simulator with the default test harness, execute the command below from the repository root:
+This SystemVerilog core comes with a corresponding simulator to more easily observe and test behavior. The simulation tool used is Verilator, which compiles HDL to native binaries. Verilator takes two input categories, HDL and a C++ test harness. The simulator included here is already compiled with a fixed test harness. To run the simulator with the default test harness, execute the command below from the repository root:
 ```bash
 # Executes the simulator
 ./Verilator/VTop
@@ -38,19 +38,19 @@ make -C Verilator -f VTop.mk -j"$(nproc)"
 # Executes the simulation
 ./Verilator/VTop
 ```
-Any changes to the HDL require a full rebuild of both the C program and the executable. For edits to the test harness alone, only rebuilding the executable is necessary. Print statements may also exist in the outsude of the test harness, and could hinder directed testing. **Ensure all $display and $strobe commands inside the HDL are removed** if a blank slate simulation is required. 
+Any changes to the HDL require a full rebuild of both the C program and the executable. For edits to the test harness alone, only rebuilding the executable is necessary. Print statements may also exist in the outside of the test harness, and could hinder directed testing. **Ensure all $display and $strobe commands inside the HDL are removed** if a blank slate simulation is required. 
 
 ## Running Software
-VenomCPU is capable of bare-metal firmware execution with complete machine-mode system support. The core has a configurable reset parameter `resetVector`, which sets the PC to itself on a reset signal. This may be altered to point to any address in supported RAM. VenomCPU features RISC-V spec compliant execption handling, so machine mode runtime enviorments are recommended. These must be initialized by configuring CSRs in the boot sequence, usually `MTVEC` and `MSCRATCH` at a minimum. A fll list of supported CSRs is included in this document. If uninitialized, the PC will be reset to 0 on any trap, which can cause unbreakable error loops.
+VenomCPU is capable of bare-metal firmware execution with complete machine-mode system support. The core has a configurable reset parameter `resetVector`, which sets the PC value on reset. This may be altered to point to any address in supported RAM. VenomCPU features RISC-V spec compliant exception handling, so machine mode runtime environments are recommended. These must be initialized by configuring CSRs in the boot sequence, usually `MTVEC` and `MSCRATCH` at a minimum. A full list of supported CSRs is included in this document. If uninitialized, the PC will be reset to 0 on any trap, which can cause unbreakable error loops.
 
-If desired, the CPU can run entirely on user mode so long as an exception causing instruction is never detected. This is done by exclusively using instructions in the base RV32I ISA, usually without `SYSTEM` class instructions. On loop end, a jump instruction back to the beginning of the program will cause the software to run in an infinite loop. For simple software implimentations, this strategy is suprisingly powerful and easy to set up.
+If desired, the CPU can run entirely on user mode so long as an exception causing instruction is never detected. This is done by exclusively using instructions in the base RV32I ISA, usually without `SYSTEM` class instructions. On loop end, a jump instruction back to the beginning of the program will cause the software to run in an infinite loop. For simple software implimentations, this strategy is surprisingly powerful and easy to set up.
 
-In simulation, the CPU initializes programs by reading `mem.hex` directly into RAM. This happens before any execution and is automatic. To run programs, compile them to `.hex` and paste them into the specified file. The first hex word is loaded into address 32'd0, the next into 32'd4, etc. For physical hardware implimentations, whatever memory system feeds the PC will serve this role. The PC will grab the first word at the `resetVector` and begin stepping through instructions. Programs must be initialized via JTAG, flash, or some other simmilar method.
+In simulation, the CPU initializes programs by reading `mem.hex` directly into RAM. This happens before any execution and is automatic. To run programs, compile them to `.hex` and paste them into the specified file. The first hex word is loaded into address 32'd0, the next into 32'd4, etc. For physical hardware implementations, whatever memory system feeds the PC will serve this role. The PC will grab the first word at the `resetVector` and begin stepping through instructions. Programs must be initialized via JTAG, flash, or some other similar method.
 
 ## Memory
 VenomCPU uses a decoupled memory interface, allowing the core to operate with any external RAM implementation that conforms to the defined handshake protocol. The included LUTRAM/BRAM implementation in the `Core/` directory is intended for initial bring-up and simulation, but can be modified or replaced as needed.
 
-The size of the default memory can be configured by adjusting the `memoryBytes` parameter in `ConfigPack.sv`. It is recommended to use a word aligned, power-of-two depth to avoid invalid or unmapped address ranges.
+The size of the default memory can be configured by adjusting the `memoryBytes` parameter in `ConfigPack.sv`. It is recommended to use a word-aligned, power-of-two depth depth to avoid invalid or unmapped address ranges.
 
 If you choose to replace the default memory implementation, you may need to create a custom HDL memory harness that satisfies the required handshake behavior. The full protocol specification is provided in `Core/Interface/`.
 
@@ -68,17 +68,17 @@ VenomCPU guarantees deterministic behavior and will strictly adhere to this inte
 | MSCRATCH  | MRW    | Standard                              |
 | MISA      | MRO    | RV32I                                 |
 | MVENDORID | MRO    | Standard                              |
-| MARCHID   | MRO    | Stadard                               |
+| MARCHID   | MRO    | Standard                              |
 | MIP       | MRW    | Writes Ignored But Don't Trap         |
-| MCYCLE    | MRW    | Writes Override Hardware Incriments   |
-| MINSTRET  | MRW    | Writes Override Hardware Incriments   |
+| MCYCLE    | MRW    | Writes Override Hardware Increments   |
+| MINSTRET  | MRW    | Writes Override Hardware Increments   |
 
 ## Development Roadmap
 1. `memoryBytes` plumbing
 2. Verification with randomized multi-cycle RAM
-3. Fabric usage redction and optimization
-4. Verification with contrained randomized tests
+3. Fabric usage reduction and optimization
+4. Verification with constrained randomized tests
 5. Load buffer with dependency checks
-6. Hardware interupt timer and spec accurate handling
-7. FreeRTOS compatability
+6. Hardware interrupt timer and spec accurate handling
+7. FreeRTOS compatibility
 
