@@ -18,7 +18,7 @@ This SystemVerilog core comes with a corresponding simulator to more easily obse
 ./Verilator/VTop
 ```
 
-For non-trivial debugging, a custom test harness may be necessary. To create a custom test harness and rebuild the simulator, you must have the Verilator CLI tool installed. From there, create a new file in the repository root named `sim_main.cpp`. Refer to the Verilator documentation for guidance on writing a custom C++ test harness tailored to your specific needs. Once the file is complete, run the following commands:
+For non-trivial debugging, a custom test harness may be necessary. To create a custom test harness and rebuild the simulator, you must have the Verilator CLI tool installed. From there, create a new file in the repository root `sim_main.cpp`. Refer to the Verilator documentation for guidance on writing a custom C++ test harness tailored to your specific needs. Once the file is complete, run the following commands:
 ```bash
 # Version
 Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
@@ -39,6 +39,13 @@ make -C Verilator -f VTop.mk -j"$(nproc)"
 ./Verilator/VTop
 ```
 Any changes to the HDL require a full rebuild of both the C program and the executable. For edits to the test harness alone, only rebuilding the executable is necessary. Print statements may also exist in the outsude of the test harness, and could hinder directed testing. **Ensure all $display and $strobe commands inside the HDL are removed** if a blank slate simulation is required. 
+
+## Running Software
+VenomCPU is capable of bare-metal firmware execution with complete machine-mode system support. The core has a configurable reset parameter `resetVector`, which sets the PC to itself on a reset signal. This may be altered to point to any address in supported RAM. VenomCPU features RISC-V spec compliant execption handling, so machine mode runtime enviorments are recommended. These must be initialized by configuring CSRs in the boot sequence, usually `MTVEC` and `MSCRATCH` at a minimum. A fll list of supported CSRs is included in this document. If uninitialized, the PC will be reset to 0 on any trap, which can cause unbreakable error loops.
+
+If desired, the CPU can run entirely on user mode so long as an exception causing instruction is never detected. This is done by exclusively using instructions in the base RV32I ISA, usually without `SYSTEM` class instructions. On loop end, a jump instruction back to the beginning of the program will cause the software to run in an infinite loop. For simple software implimentations, this strategy is suprisingly powerful and easy to set up.
+
+In simulation, the CPU initializes programs by reading `mem.hex` directly into RAM. This happens before any execution and is automatic. To run programs, compile them to `.hex` and paste them into the specified file. The first hex word is loaded into address 32'd0, the next into 32'd4, etc. For physical hardware implimentations, whatever memory system feeds the PC will serve this role. The PC will grab the first word at the `resetVector` and begin stepping through instructions. Programs must be initialized via JTAG, flash, or some other simmilar method.
 
 ## Memory
 VenomCPU uses a decoupled memory interface, allowing the core to operate with any external RAM implementation that conforms to the defined handshake protocol. The included LUTRAM/BRAM implementation in the `Core/` directory is intended for initial bring-up and simulation, but can be modified or replaced as needed.
