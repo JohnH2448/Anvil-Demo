@@ -1,6 +1,6 @@
 # VenomCPU
 ## RISC-V RV32I Pipelined CPU Core in SystemVerilog
-### RISCOF verification in progress. Docs will drop alongside the first verified release!
+### RISCOF verified. Docs coming soon!
 ### Specifications:
 - In-Order 5-Stage Pipeline
 - Handshake Based IF + MEM For Arbitrary External RAM
