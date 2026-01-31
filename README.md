@@ -1,7 +1,7 @@
-# Anvil-Core
+# Anvil-Demo
 
 ## Introduction
-Anvil-Core is a RISC-V CPU core implementing the RV32I base ISA with Zicsr support, verified using the RISC-V Compatibility Framework (RISCOF). The core is provided as synthesizable SystemVerilog, and is intended for FPGA implementation, reference simulation, research and education, and as a foundation for custom RISC-V system designs.
+Anvil-Demo is a RISC-V CPU core implementing the RV32I base ISA with Zicsr support, verified using the RISC-V Compatibility Framework (RISCOF). The core is provided as synthesizable SystemVerilog, and is intended for FPGA implementation, reference simulation, research and education, and as a foundation for custom RISC-V system designs. 
 
 ## Features
 
@@ -12,9 +12,9 @@ Anvil-Core is a RISC-V CPU core implementing the RV32I base ISA with Zicsr suppo
 - Hardwired M-Mode Execution
 
 ## Quickstart
-All synthesizable SystemVerilog RTL for Anvil-Core is contained in the `Core/` directory. To integrate the core, first clone the repository:
+All synthesizable SystemVerilog RTL for Anvil-Demo is contained in the `Core/` directory. To integrate the core, first clone the repository:
 ```bash
-git clone https://github.com/JohnH2448/VenomCPU
+git clone https://github.com/JohnH2448/Anvil-Demo
 ```
 The contents of `Core/` are fully self-contained and may be directly imported into FPGA or ASIC build flows. Other directories (simulation and verification artifacts) are not required for hardware integration. `Top.sv` is the hierarchical top-level module and serves as the compilation entry point for the core.
 
@@ -48,7 +48,7 @@ make -C Verilator -f VTop.mk -j"$(nproc)"
 Any changes to the HDL require a full rebuild of both the C program and the executable. For edits to the test harness alone, only rebuilding the executable is necessary. Print statements may also exist in the outside of the test harness, and could hinder directed testing. **Ensure all $display and $strobe commands inside the HDL are removed** if a blank slate simulation is required. 
 
 ## Running Software
-Anvil-Core is capable of bare-metal firmware execution with complete machine-mode system support. The core has a configurable reset parameter `resetVector`, which sets the PC value on reset. This may be altered to point to any address in supported RAM. VenomCPU features RISC-V spec compliant exception handling, so machine mode runtime environments are recommended. These must be initialized by configuring CSRs in the boot sequence, usually `MTVEC` and `MSCRATCH` at a minimum. A full list of supported CSRs is included in this document. If uninitialized, the PC will be reset to 0 on any trap, which can cause unbreakable error loops.
+Anvil-Demo is capable of bare-metal firmware execution with complete machine-mode system support. The core has a configurable reset parameter `resetVector`, which sets the PC value on reset. This may be altered to point to any address in supported RAM. Anvil-Demo features RISC-V spec compliant exception handling, so machine mode runtime environments are recommended. These must be initialized by configuring CSRs in the boot sequence, usually `MTVEC` and `MSCRATCH` at a minimum. A full list of supported CSRs is included in this document. If uninitialized, the PC will be reset to 0 on any trap, which can cause unbreakable error loops.
 
 If desired, the CPU can run entirely on user mode so long as an exception causing instruction is never detected. This is done by exclusively using instructions in the base RV32I ISA, usually without `SYSTEM` class instructions. On loop end, a jump instruction back to the beginning of the program will cause the software to run in an infinite loop. For simple software implimentations, this strategy is surprisingly powerful and easy to set up.
 
@@ -58,13 +58,13 @@ In simulation, the CPU initializes programs by reading `mem.hex` directly into R
 
 (Be careful with this, as deviating from default memory has not been fully verified as of yet. This is near on the to-do list.)
 
-Anvil-Core uses a decoupled memory interface, allowing the core to operate with any external RAM implementation that conforms to the defined handshake protocol. The included LUTRAM/BRAM implementation in the `Core/` directory is intended for initial bring-up and simulation, but can be modified or replaced as needed.
+Anvil-Demo uses a decoupled memory interface, allowing the core to operate with any external RAM implementation that conforms to the defined handshake protocol. The included LUTRAM/BRAM implementation in the `Core/` directory is intended for initial bring-up and simulation, but can be modified or replaced as needed.
 
 The size of the default memory can be configured by adjusting the `memoryBytes` parameter in `ConfigPack.sv`. It is recommended to use a word-aligned, power-of-two depth depth to avoid invalid or unmapped address ranges.
 
 If you choose to replace the default memory implementation, you may need to create a custom HDL memory harness that satisfies the required handshake behavior. The full protocol specification is provided in `Core/Interface/`. 
 
-Anvil-Core guarantees deterministic behavior and will strictly adhere to this interface contract. However, the core assumes standard synchronous setup and hold timing. When interfacing with asynchronous memory or memory operating in a separate clock domain, additional synchronization logic **must be implemented** in the harness to handle clock domain crossing and prevent metastability.
+Anvil-Demo guarantees deterministic behavior and will strictly adhere to this interface contract. However, the core assumes standard synchronous setup and hold timing. When interfacing with asynchronous memory or memory operating in a separate clock domain, additional synchronization logic **must be implemented** in the harness to handle clock domain crossing and prevent metastability.
 
 ## Supported CSR Reference Table
 | CSR       | ACCESS | NOTES                                 |
@@ -93,7 +93,7 @@ Anvil-Core guarantees deterministic behavior and will strictly adhere to this in
 7. FreeRTOS compatibility
 
 ## Design Context
-Anvil-Core was personally developed as a Sophomore project to learn computer archetecture. The design emphasizes experiential learning through iterative development rather than drop-in cannonical solutitions. As a result, certain HDL choices and dataflow strategies may differ from conventional textbook design. These decisions reflect the exploratory nature of the project and the process of building the core from concept rather than reference. For students and new designers, I encourage you to move past hesitation and begin building, even before you feel fully prepared. The design process itself will drive your motivation and naturally introduce the knowledge required to succeed.
+Anvil-Demo was personally developed as a Sophomore project while learning computer archetecture. It serves the primary role of being a practice build for the upcoming Anvil series CPUs. The design emphasizes experiential learning through iterative development rather than drop-in cannonical solutitions. As a result, certain HDL choices and dataflow strategies may differ from conventional textbook design. These decisions reflect the exploratory nature of the project and the process of building the core from concept rather than reference. For students and new designers, I encourage you to move past hesitation and begin building, even before you feel fully prepared. The design process itself will drive your motivation and naturally introduce the knowledge required to succeed.
 
 ## Licence
-Anvil-Core is fully open source and free to use under the project's license. You are welcome to use, modify, and integrate the core into your own projects. If you end up using Anvil-Core, I’d love to hear about it — feedback and project showcases are always appreciated. Email: jch0100@uah.edu
+Anvil-Demo is fully open source and free to use under the project's license. You are welcome to use, modify, and integrate the core into your own projects. If you end up using Anvil-Demo, I’d love to hear about it — feedback and project showcases are always appreciated. Email: jch0100@uah.edu
